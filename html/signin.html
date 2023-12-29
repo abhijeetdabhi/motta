@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind Script  -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/594/594856.png">
+    
+    <!-- title -->
+    <title>My Account</title>
+
+    <!-- style -->
+    <style>
+        *{
+            font-family: 'Outfit', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div class="signin-container flex flex-col items-center justify-center h-auto py-16">
+        <div class="heading">
+            <div class="logo">
+                <img src="https://motta.uix.store/electronic/wp-content/themes/motta/images/logo-short.svg" alt="">
+            </div>
+        </div>
+        <div class="flex flex-col items-center py-5 px-12 mt-6 border w-[350px] md:w-[450px]">
+            <div class="title flex text-lg text-[#1d2128] font-medium">
+                <h3 id="SignIn" class="border-b-2 border-black w-[150px] pb-5 text-center cursor-pointer" onclick="click1()">Sign in</h3>
+                <h3 id="CreateAcnt" class="border-b-2 w-[150px] pb-5 text-center cursor-pointer" onclick="click2()">Create Account</h3>
+            </div>
+            <div class="flex items-center w-full mt-6">
+                <div class="sign-in w-full">
+                    <form action="">
+                        <div class="flex flex-col gap-7 w-full">
+                            <div class="email">
+                                <p class="cursor-default">Email</p>
+                                <input class="w-full h-12 border-2 border-[#cccccc] rounded-sm focus:border-black focus:ring-0 mt-2" type="text" required>
+                            </div>
+                            <div class="password">
+                                <p class="cursor-default">Password</p>
+                                <input class="w-full h-12 border-2 border-[#cccccc] rounded-sm focus:border-black focus:ring-0 mt-2" type="password" required>
+                            </div>
+                        </div>
+                        <div class="forgot mt-3">
+                            <a href="" class="underline">Forgot Password?</a>
+                        </div>
+                        <div class="keep group flex items-center gap-2 cursor-pointer max-w-max my-4">
+                            <input type="checkbox" class="border-2 border-[#bbb] group-hover:border-black transition duration-300 rounded-sm" name="" id="" required>
+                            <p class="text-[#8b929c] group-hover:text-black transition duration-300">Keep me signed in</p>
+                        </div>
+                        <div class="submit">
+                            <input class="w-full text-center bg-[#3449ca] py-3 px-6 text-white hover:bg-[#2e3fa3] cursor-pointer transition duration-300" type="submit" value="Sign in">
+                        </div>
+                    </form>
+                    <hr class="mt-6">
+                    <div class="new">
+                        <div class="title m-auto mt-6 relative max-w-max after:content-[''] after:absolute after:left-0 after:bottom-0 after:bg-black after:w-full after:m-auto after:h-[1.5px]">
+                            <h3>New Customer? Create account</h3>
+                        </div>
+                        <div class="social-media flex gap-4 items-center justify-between mt-7 pb-4 text-base font-bold">
+                            <div class="facebook flex gap-2 w-full items-center justify-center py-4 rounded-full cursor-pointer" style="box-shadow: 0 2px 6px 0 rgba(0,0,0,.15);">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1365.3 1365.3" height="24" width="24"><path d="M1365.3 682.7A682.7 682.7 0 10576 1357V880H402.7V682.7H576V532.3c0-171.1 102-265.6 257.9-265.6 74.6 0 152.8 13.3 152.8 13.3v168h-86.1c-84.8 0-111.3 52.6-111.3 106.6v128h189.4L948.4 880h-159v477a682.8 682.8 0 00576-674.3" fill="#1877f2"></path><path d="M948.4 880l30.3-197.3H789.3v-128c0-54 26.5-106.7 111.3-106.7h86V280s-78-13.3-152.7-13.3c-156 0-257.9 94.5-257.9 265.6v150.4H402.7V880H576v477a687.8 687.8 0 00213.3 0V880h159.1" fill="#fff"></path></svg>
+                                <p class="text-[#1877F2]">Facebook</p>
+                            </div>
+                            <div class="google flex gap-2 w-full items-center justify-center py-4 rounded-full cursor-pointer" style="box-shadow: 0 2px 6px 0 rgba(0,0,0,.15);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M20.64 12.2045c0-.6381-.0573-1.2518-.1636-1.8409H12v3.4814h4.8436c-.2086 1.125-.8427 2.0782-1.7959 2.7164v2.2581h2.9087c1.7018-1.5668 2.6836-3.874 2.6836-6.615z"></path><path fill="#34A853" d="M12 21c2.43 0 4.4673-.806 5.9564-2.1805l-2.9087-2.2581c-.8059.54-1.8368.859-3.0477.859-2.344 0-4.3282-1.5831-5.036-3.7104H3.9574v2.3318C5.4382 18.9832 8.4818 21 12 21z"></path><path fill="#FBBC05" d="M6.964 13.71c-.18-.54-.2822-1.1168-.2822-1.71s.1023-1.17.2823-1.71V7.9582H3.9573A8.9965 8.9965 0 0 0 3 12c0 1.4523.3477 2.8268.9573 4.0418L6.964 13.71z"></path><path fill="#EA4335" d="M12 6.5795c1.3214 0 2.5077.4541 3.4405 1.346l2.5813-2.5814C16.4632 3.8918 14.426 3 12 3 8.4818 3 5.4382 5.0168 3.9573 7.9582L6.964 10.29C7.6718 8.1627 9.6559 6.5795 12 6.5795z"></path></svg>
+                                <p class="text-[#0000008a]">Google</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="create w-full hidden">
+                    <div class="new">
+                        <div class="title text-center">
+                            <h3 class="font-medium text-sm">Sign up with...</h3>
+                        </div>
+                        <div class="social-media flex gap-4 items-center justify-between mt-7 pb-4 text-base font-bold">
+                            <div class="facebook flex gap-2 w-full items-center justify-center py-4 rounded-full cursor-pointer" style="box-shadow: 0 2px 6px 0 rgba(0,0,0,.15);">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1365.3 1365.3" height="24" width="24"><path d="M1365.3 682.7A682.7 682.7 0 10576 1357V880H402.7V682.7H576V532.3c0-171.1 102-265.6 257.9-265.6 74.6 0 152.8 13.3 152.8 13.3v168h-86.1c-84.8 0-111.3 52.6-111.3 106.6v128h189.4L948.4 880h-159v477a682.8 682.8 0 00576-674.3" fill="#1877f2"></path><path d="M948.4 880l30.3-197.3H789.3v-128c0-54 26.5-106.7 111.3-106.7h86V280s-78-13.3-152.7-13.3c-156 0-257.9 94.5-257.9 265.6v150.4H402.7V880H576v477a687.8 687.8 0 00213.3 0V880h159.1" fill="#fff"></path></svg>
+                                <p class="text-[#1877F2]">Facebook</p>
+                            </div>
+                            <div class="google flex gap-2 w-full items-center justify-center py-4 rounded-full cursor-pointer" style="box-shadow: 0 2px 6px 0 rgba(0,0,0,.15);">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#4285F4" d="M20.64 12.2045c0-.6381-.0573-1.2518-.1636-1.8409H12v3.4814h4.8436c-.2086 1.125-.8427 2.0782-1.7959 2.7164v2.2581h2.9087c1.7018-1.5668 2.6836-3.874 2.6836-6.615z"></path><path fill="#34A853" d="M12 21c2.43 0 4.4673-.806 5.9564-2.1805l-2.9087-2.2581c-.8059.54-1.8368.859-3.0477.859-2.344 0-4.3282-1.5831-5.036-3.7104H3.9574v2.3318C5.4382 18.9832 8.4818 21 12 21z"></path><path fill="#FBBC05" d="M6.964 13.71c-.18-.54-.2822-1.1168-.2822-1.71s.1023-1.17.2823-1.71V7.9582H3.9573A8.9965 8.9965 0 0 0 3 12c0 1.4523.3477 2.8268.9573 4.0418L6.964 13.71z"></path><path fill="#EA4335" d="M12 6.5795c1.3214 0 2.5077.4541 3.4405 1.346l2.5813-2.5814C16.4632 3.8918 14.426 3 12 3 8.4818 3 5.4382 5.0168 3.9573 7.9582L6.964 10.29C7.6718 8.1627 9.6559 6.5795 12 6.5795z"></path></svg>
+                                <p class="text-[#0000008a]">Google</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full mt-3">
+                        <p class="text-center">or sign up using your email address</p>
+                        <div class="email-signin mt-7 flex flex-col gap-7">
+                            <div class="email">
+                                <p class="cursor-default">Email</p>
+                                <input class="w-full h-12 border-2 border-[#cccccc] rounded-sm focus:border-black focus:ring-0 mt-2" type="text" required>
+                            </div>
+                            <div class="pass">
+                                <span class="text-[#282c33] font-normal text-base">A password will be sent to your email address.</span>
+                                <p class="text-[#7c818b] font-normal text-base mt-5">Your personal data will be used to support your experience throughout this website, to manage access to your account, and for other purposes described in our <a href="signin.html" class="text-[#282c33] underline"> privacy policy</a>.</p>
+                            </div>
+                            <div class="submit">
+                                <input class="w-full text-center bg-[#3449ca] py-4 px-6 text-white hover:bg-[#2e3fa3] cursor-pointer transition duration-300" type="submit" value="Register">
+                            </div>
+                            <div class="vender-member flex flex-col relative gap-2">
+                                <a href="vender.html" class="text-sm font-medium w-full m-auto relative max-w-max after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1.3px] after:bg-black">Become a Vendor</a>
+                                <a href="signin.html" class="text-sm font-medium w-full m-auto relative max-w-max after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[1.3px] after:bg-black">Already a member? Sign in</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <footer class="flex flex-col gap-4 items-center justify-between px-10 border-t py-5 lg:flex-row xl:px-52">
+        <div class="left-side">
+            <p class="text-xs">Copyright © 2023 Motta, All rights reserved.</p>
+        </div>
+        <div class="right-side flex flex-wrap items-center text-sm font-normal gap-5">
+            <p class="relative max-w-max after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:m-auto after:h-[1.2px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">Privacy Policy</p>
+            <p class="relative max-w-max after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:m-auto after:h-[1.2px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">Term of Use</p>
+            <p class="relative max-w-max after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:m-auto after:h-[1.2px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">Legal</p>
+            <p class="relative max-w-max after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:m-auto after:h-[1.2px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">Site Map</p>
+        </div>
+    </footer>
+
+
+    <script>
+        let SignIn = document.querySelector('.sign-in');
+        let create = document.querySelector('.create');
+
+        let SignInBtn = document.getElementById('SignIn');
+        let createBtn = document.getElementById('CreateAcnt');
+
+        function click1(){
+            SignIn.style.display = 'block';
+            create.style.display = 'none';
+            SignInBtn.style.borderBottomColor = 'black';
+            createBtn.style.borderBottomColor = '#e5e7eb';
+        }
+
+        function click2(){
+            SignIn.style.display = 'none';
+            create.style.display = 'block';
+            SignInBtn.style.borderBottomColor = '#e5e7eb';
+            createBtn.style.borderBottomColor = 'black';
+        }
+    </script>
+</body>
+</html>

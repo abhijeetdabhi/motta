@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind Script  -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/594/594856.png">
+
+    <!-- title -->
+    <title>Motta &#8211; Online Store</title>
+
+    <style>
+        *{
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .sidebar::-webkit-scrollbar,
+        .Shoppingcarts::-webkit-scrollbar {
+            width: 3px;
+        }
+        .sidebar::-webkit-scrollbar-track,
+        .Shoppingcarts::-webkit-scrollbar-track{
+            border-radius: 10px;
+        }
+        .sidebar::-webkit-scrollbar-thumb,
+        .Shoppingcarts::-webkit-scrollbar-thumb {
+            background: #c8c8c8; 
+            border-radius: 10px;
+        }
+
+        header::-webkit-scrollbar{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- navbar -->
+    <nav id="Navbar" class="flex relative flex-col bg-[#08091b] text-[#fff] p-5">
+        <div class="navbar flex items-center w-full justify-between">
+            <div class="logo flex items-center gap-5">
+                <div class="menubar cursor-pointer xl:hidden" id="menuBar">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0" y="0" viewBox="0 0 384 384" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M368 154.668H16c-8.832 0-16-7.168-16-16s7.168-16 16-16h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zM368 32H16C7.168 32 0 24.832 0 16S7.168 0 16 0h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zM368 277.332H16c-8.832 0-16-7.168-16-16s7.168-16 16-16h352c8.832 0 16 7.168 16 16s-7.168 16-16 16zm0 0" fill="#fff" opacity="1" data-original="#000000"></path></g></svg>
+                </div>
+                <img src="https://motta.uix.store/electronic/wp-content/themes/motta/images/logo-light.svg" alt="">
+                <div id="categories" onclick="showData()" class="relative hidden items-center gap-3 text-sm cursor-pointer xl:flex">
+                    <svg style="fill: white;" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M8.8 6.4c1.328 0 2.4 1.072 2.4 2.4s-1.072 2.4-2.4 2.4-2.4-1.072-2.4-2.4 1.072-2.4 2.4-2.4zM8.8 3.2c-3.088 0-5.6 2.512-5.6 5.6s2.512 5.6 5.6 5.6 5.6-2.512 5.6-5.6-2.512-5.6-5.6-5.6v0z"></path><path d="M23.2 6.4c1.328 0 2.4 1.072 2.4 2.4s-1.072 2.4-2.4 2.4-2.4-1.072-2.4-2.4 1.072-2.4 2.4-2.4zM23.2 3.2c-3.088 0-5.6 2.512-5.6 5.6s2.512 5.6 5.6 5.6 5.6-2.512 5.6-5.6-2.512-5.6-5.6-5.6v0z"></path><path d="M8.8 20.8c1.328 0 2.4 1.072 2.4 2.4s-1.072 2.4-2.4 2.4-2.4-1.072-2.4-2.4 1.072-2.4 2.4-2.4zM8.8 17.6c-3.088 0-5.6 2.512-5.6 5.6s2.512 5.6 5.6 5.6 5.6-2.512 5.6-5.6-2.512-5.6-5.6-5.6v0z"></path><path d="M23.2 20.8c1.328 0 2.4 1.072 2.4 2.4s-1.072 2.4-2.4 2.4-2.4-1.072-2.4-2.4 1.072-2.4 2.4-2.4zM23.2 17.6c-3.088 0-5.6 2.512-5.6 5.6s2.512 5.6 5.6 5.6 5.6-2.512 5.6-5.6-2.512-5.6-5.6-5.6v0z"></path></svg>
+                    <p>Categories</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M64 88a3.988 3.988 0 0 1-2.828-1.172l-40-40c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0L64 78.344l37.172-37.172c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656l-40 40A3.988 3.988 0 0 1 64 88z" fill="#fff" opacity="1" data-original="#000000"></path></g></svg>
+                    <div id="categoriesSubmenu" class="absolute z-10 text-black top-[65px] invisible opacity-0 left-0 flex flex-col gap-5 w-64 bg-white p-5 transition duration-300" style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;">
+                        <div class="laptop">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path fill="none" stroke="#000" style="stroke:#000" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M2.857 24.571v-17.143c0-1.263 1.023-2.286 2.286-2.286h21.714c1.263 0 2.286 1.023 2.286 2.286v17.143"></path><path d="M16.686 8c0 0.378-0.307 0.686-0.686 0.686s-0.686-0.307-0.686-0.686c0-0.378 0.307-0.686 0.686-0.686s0.686 0.307 0.686 0.686z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="0.8571" d="M28.738 27.143h-25.477c-0.935 0-1.775-0.569-2.122-1.437v0c-0.272-0.68 0.229-1.421 0.962-1.421h9.831c0.421 0 0.834 0.098 1.21 0.286v0c0.376 0.187 0.79 0.286 1.21 0.286h3.294c0.421 0 0.834-0.098 1.21-0.286v0c0.376-0.187 0.79-0.286 1.21-0.286h9.832c0.733 0 1.233 0.741 0.961 1.421v0c-0.347 0.867-1.187 1.437-2.122 1.437z"></path></svg>
+                                <span>Laptops & Computers</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="tv-video">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M29.143 24.571h-26.286c-0.631 0-1.143-0.512-1.143-1.143v-17.143c0-0.631 0.512-1.143 1.143-1.143h26.286c0.631 0 1.143 0.512 1.143 1.143v17.143c0 0.631-0.512 1.143-1.143 1.143z"></path><path d="M18 26h-4c-0.473 0-0.857-0.384-0.857-0.857v0c0-0.473 0.384-0.857 0.857-0.857h4c0.473 0 0.857 0.384 0.857 0.857v0c0 0.473-0.384 0.857-0.857 0.857z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M8 25.143l-2.286 2.286"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M8 25.143l2.286 2.286"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M24 25.143l-2.286 2.286"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M24 25.143l2.286 2.286"></path></svg>
+                                <span>TVs & Video</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="cell">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M22.857 30.286h-13.714c-0.946 0-1.714-0.768-1.714-1.714v-25.143c0-0.946 0.768-1.714 1.714-1.714h13.714c0.946 0 1.714 0.768 1.714 1.714v25.143c0 0.946-0.768 1.714-1.714 1.714z"></path><path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M12.571 28h6.857"></path><path d="M25.714 7.429v3.429c0 0.315-0.256 0.571-0.571 0.571s-0.571-0.256-0.571-0.571v-3.429c0-0.315 0.256-0.571 0.571-0.571s0.571 0.256 0.571 0.571z"></path><path d="M7.429 7.429v1.143c0 0.315-0.256 0.571-0.571 0.571v0c-0.315 0-0.571-0.256-0.571-0.571v-1.143c0-0.315 0.256-0.571 0.571-0.571v0c0.315 0 0.571 0.256 0.571 0.571z"></path><path d="M7.429 10.857v1.143c0 0.315-0.256 0.571-0.571 0.571v0c-0.315 0-0.571-0.256-0.571-0.571v-1.143c0-0.315 0.256-0.571 0.571-0.571v0c0.315 0 0.571 0.256 0.571 0.571z"></path><path d="M18.286 3.429h-4.571c-0.631 0-1.143-0.512-1.143-1.143v0c0-0.631 0.512-1.143 1.143-1.143h4.571c0.631 0 1.143 0.512 1.143 1.143v0c0 0.631-0.512 1.143-1.143 1.143z"></path></svg>
+                                <span>Cell Phones</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="wear-tech">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path d="M24 13.143v-1.143c0-0.631 0.512-1.143 1.143-1.143v0c0.631 0 1.143 0.512 1.143 1.143v1.143c0 0.631-0.512 1.143-1.143 1.143v0c-0.631 0-1.143-0.512-1.143-1.143z"></path><path d="M24.343 19.2v-1.829c0-0.442 0.358-0.8 0.8-0.8v0c0.442 0 0.8 0.358 0.8 0.8v1.829c0 0.442-0.358 0.8-0.8 0.8s-0.8-0.358-0.8-0.8z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M21.143 24.571h-10.286c-1.894 0-3.429-1.535-3.429-3.429v-10.286c0-1.894 1.535-3.429 3.429-3.429h10.286c1.894 0 3.429 1.535 3.429 3.429v10.286c0 1.894-1.535 3.429-3.429 3.429z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.0286" d="M9.714 7.429c1.197-1 1.795-2.586 1.795-4.139v0c0-0.595 0.41-1.121 1.008-1.293v0c2.305-0.376 4.659-0.376 6.965 0v0c0.598 0.171 1.008 0.697 1.008 1.293v0c0 1.553 0.611 3.139 1.795 4.139"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="10" stroke-width="1.0286" d="M22.286 24.571c-1.219 1.024-1.795 2.586-1.795 4.139v0c0 0.595-0.41 1.121-1.008 1.293v0c-2.305 0.376-4.659 0.376-6.965 0v0c-0.598-0.171-1.008-0.697-1.008-1.293v0c0-1.553-0.603-3.115-1.795-4.139"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M16 10.286v1.143"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M16 20.571v1.143"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M21.714 16h-1.143"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M11.429 16h-1.143"></path></svg>
+                                <span>Wearable Tech</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="appliances">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M29.143 16c0 7.258-5.885 13.143-13.143 13.143s-13.143-5.885-13.143-13.143c0-7.258 5.885-13.143 13.143-13.143s13.143 5.885 13.143 13.143z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M2.571 2.571l3.947 3.947"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M0.857 8.286h4.501"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M8.286 0.857v4.502"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M29.429 2.571l-3.947 3.947"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M31.143 8.286h-4.502"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M23.714 0.857v4.502"></path><path d="M15.966 12.342c-0.631-0.019-1.127-0.546-1.107-1.177 0.018-0.631 0.545-1.127 1.176-1.107s1.127 0.546 1.109 1.177c-0.019 0.631-0.546 1.127-1.177 1.107z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M12 3.143v8c0 2.209 1.791 4 4 4v0c2.209 0 4-1.791 4-4v-8"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M20 7.145c3.369 1.525 5.714 4.917 5.714 8.855 0 5.366-4.35 9.714-9.714 9.714-5.366 0-9.714-4.349-9.714-9.714 0-3.938 2.344-7.33 5.714-8.855"></path></svg>
+                                <span>Appliances</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="cameras">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M30.286 15.429v8c0 1.263-1.023 2.286-2.286 2.286h-24c-1.263 0-2.286-1.023-2.286-2.286v-14.857c0-1.263 1.023-2.286 2.286-2.286h17.143"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M10.857 22.286h-4.571c-0.631 0-1.143-0.512-1.143-1.143v-5.714c0-0.631 0.512-1.143 1.143-1.143h4.571c0.631 0 1.143 0.512 1.143 1.143v5.714c0 0.631-0.512 1.143-1.143 1.143z"></path><path d="M5.714 11.429v0c-0.631 0-1.143-0.512-1.143-1.143v0c0-0.631 0.512-1.143 1.143-1.143v0c0.631 0 1.143 0.512 1.143 1.143v0c0 0.631-0.512 1.143-1.143 1.143z"></path><path d="M10.286 6.857h-2.286c-0.631 0-1.143-0.512-1.143-1.143v0c0-0.631 0.512-1.143 1.143-1.143h2.286c0.631 0 1.143 0.512 1.143 1.143v0c0 0.631-0.512 1.143-1.143 1.143z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M26.857 18.857h-5.714c-1.894 0-3.429-1.535-3.429-3.429v-5.714c0-1.894 1.535-3.429 3.429-3.429h5.714c1.894 0 3.429 1.535 3.429 3.429v5.714c0 1.894-1.535 3.429-3.429 3.429z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="0.8571" d="M24 9.714c-1.578 0-2.857 1.279-2.857 2.857s1.279 2.857 2.857 2.857c1.578 0 2.857-1.279 2.857-2.857s-1.279-2.857-2.857-2.857z"></path></svg>
+                                <span>Cameras</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="ipads">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M28.571 28h-25.143c-0.946 0-1.714-0.768-1.714-1.714v-18.286c0-0.946 0.768-1.714 1.714-1.714h25.143c0.946 0 1.714 0.768 1.714 1.714v18.286c0 0.946-0.768 1.714-1.714 1.714z"></path><path stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M11.429 25.714h9.143"></path><path d="M1.714 9.714v3.429c0 0.315-0.256 0.571-0.571 0.571v0c-0.315 0-0.571-0.256-0.571-0.571v-3.429c0-0.315 0.256-0.571 0.571-0.571v0c0.315 0 0.571 0.256 0.571 0.571z"></path><path d="M25.6 4.686h-16.339c-0.382 0-0.762-0.043-1.135-0.129l-2.411-0.557 2.411-0.557c0.373-0.086 0.753-0.129 1.135-0.129h16.339c0.378 0 0.686 0.307 0.686 0.686s-0.307 0.686-0.686 0.686z"></path></svg>
+                                <span>iPads & Tablets</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="headphone">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path d="M26.526 8.381c0 0.378-0.307 0.686-0.686 0.686s-0.686-0.307-0.686-0.686c0-0.378 0.307-0.686 0.686-0.686s0.686 0.307 0.686 0.686z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0191" d="M24 11.429v0c-1.071 0.714-1.714 1.915-1.714 3.203v7.279c0 0.606-0.241 1.187-0.67 1.616v0c-0.893 0.893-2.339 0.893-3.232 0v0c-0.429-0.429-0.67-1.010-0.67-1.616v-13.323c0-3.175 2.297-5.975 5.4-6.273 2.494-0.241 4.71 1.080 5.817 3.114 0.477 0.874-0.001 1.881-0.001 2.952s0.478 2.078 0.001 2.952c-1.021 1.874-2.982 3.143-5.235 3.143l-1.296-0.009"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M20.654 8.381c0-1.683 1.365-3.048 3.048-3.048"></path><path d="M5.474 14.095c0 0.378 0.307 0.686 0.686 0.686s0.686-0.307 0.686-0.686c0-0.378-0.307-0.686-0.686-0.686s-0.686 0.307-0.686 0.686z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0191" d="M8 17.143v0c1.071 0.714 1.714 1.915 1.714 3.203v7.279c0 0.606 0.241 1.187 0.67 1.616v0c0.893 0.893 2.339 0.893 3.232 0v0c0.429-0.429 0.67-1.010 0.67-1.616v-13.323c0-3.175-2.297-5.975-5.4-6.273-2.494-0.241-4.71 1.080-5.817 3.114-0.477 0.874 0.001 1.881 0.001 2.952s-0.478 2.078-0.001 2.952c1.021 1.874 2.982 3.143 5.235 3.143l1.296-0.009"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M11.346 14.095c0-1.683-1.365-3.048-3.048-3.048"></path></svg>
+                                <span>Headphones</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="networking">
+                            <div class="flex items-center gap-2">
+                                <svg class="w-6" viewBox="0 0 32 32"><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M28 26.857h-24c-0.946 0-1.714-0.768-1.714-1.714v-3.429c0-0.946 0.768-1.714 1.714-1.714h24c0.946 0 1.714 0.768 1.714 1.714v3.429c0 0.946-0.768 1.714-1.714 1.714z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0097" d="M7.429 29.029h3.429"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0097" d="M21.143 29.029h3.429"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M14.286 20h-5.714v-1.143c0-0.631 0.512-1.143 1.143-1.143h3.429c0.631 0 1.143 0.512 1.143 1.143z"></path><path d="M6.857 23.429c0 0.631-0.512 1.143-1.143 1.143s-1.143-0.512-1.143-1.143c0-0.631 0.512-1.143 1.143-1.143s1.143 0.512 1.143 1.143z"></path><path d="M26.857 23.429c0 0.315-0.256 0.571-0.571 0.571s-0.571-0.256-0.571-0.571c0-0.315 0.256-0.571 0.571-0.571s0.571 0.256 0.571 0.571z"></path><path d="M24.571 23.429c0 0.315-0.256 0.571-0.571 0.571s-0.571-0.256-0.571-0.571c0-0.315 0.256-0.571 0.571-0.571s0.571 0.256 0.571 0.571z"></path><path d="M22.286 23.429c0 0.315-0.256 0.571-0.571 0.571s-0.571-0.256-0.571-0.571c0-0.315 0.256-0.571 0.571-0.571s0.571 0.256 0.571 0.571z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="10" stroke-width="1.0286" d="M13.143 17.714h-3.429v-10.286c0-0.631 0.512-1.143 1.143-1.143v0c0.631 0 1.143 0.512 1.143 1.143v1.050c0 1.197 0.193 2.386 0.571 3.521v0c0.378 1.135 0.571 2.325 0.571 3.521z"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M8.029 10.354c-1.562-1.562-1.562-4.095 0-5.657"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M13.686 4.697c1.562 1.562 1.562 4.095 0 5.657"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M6.008 12.374c-2.678-2.678-2.678-7.019 0-9.697"></path><path fill="none" stroke="#000" style="stroke: var(--color1, #000)" stroke-linejoin="miter" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.0286" d="M15.706 2.676c2.678 2.678 2.678 7.019 0 9.697"></path></svg>
+                                <span>Networking</span>
+                                <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search items-center hidden xl:flex">
+                <input id="SearchInput" class="w-[52vw] h-10 focus:ring-[#08091b] border-0 focus:border-[#08091b] text-black focus:outline-none rounded-s-sm" type="text" placeholder="search for anything">
+                <div class="search-btn bg-[#b7ff1d] px-3 h-10 flex items-center justify-center rounded-e-sm hover:bg-[#81b909] transition duration-300 cursor-pointer">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.474 0C101.151 0 0 101.151 0 225.474c0 124.33 101.151 225.474 225.474 225.474 124.33 0 225.474-101.144 225.474-225.474C450.948 101.151 349.804 0 225.474 0zm0 409.323c-101.373 0-183.848-82.475-183.848-183.848S124.101 41.626 225.474 41.626s183.848 82.475 183.848 183.848-82.475 183.849-183.848 183.849z" fill="#08091b" opacity="1" data-original="#000000"></path><path d="M505.902 476.472 386.574 357.144c-8.131-8.131-21.299-8.131-29.43 0-8.131 8.124-8.131 21.306 0 29.43l119.328 119.328A20.74 20.74 0 0 0 491.187 512a20.754 20.754 0 0 0 14.715-6.098c8.131-8.124 8.131-21.306 0-29.43z" fill="#08091b" opacity="1" data-original="#000000"></path></g></svg>
+                </div>
+            </div>
+            <div class="user-info flex items-center gap-4">
+                <div class="language">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><circle cx="256" cy="256" r="256" fill="#27273d" opacity="1" data-original="#27273d"></circle><path fill="#e88032" d="M496.14 167.12H15.85C52 69.54 145.86 0 256 0s204 69.54 240.14 167.12z" opacity="1" data-original="#e88032" class=""></path><path fill="#ffffff" d="M496.14 344.87H15.85a256.53 256.53 0 0 1 0-177.75h480.29a253 253 0 0 1 8.91 29.41 257.31 257.31 0 0 1-8.91 148.34z" opacity="1" data-original="#ffffff"></path><path fill="#00b564" d="M256 512A256.09 256.09 0 0 1 15.85 344.87h480.29a252.21 252.21 0 0 1-13.05 29.41A256 256 0 0 1 256 512z" opacity="1" data-original="#00b564"></path><path fill="#d8712b" d="M289.5 2.17c-95.38 12.47-174.24 77.43-206.65 165h-67C52 69.54 145.86 0 256 0a259.05 259.05 0 0 1 33.5 2.17z" opacity="1" data-original="#d8712b" class=""></path><path fill="#e2e2e2" d="M67 256a255.41 255.41 0 0 0 15.85 88.87h-67a256.53 256.53 0 0 1 0-177.75h67A252.91 252.91 0 0 0 74 196.53 256.16 256.16 0 0 0 67 256z" opacity="1" data-original="#e2e2e2"></path><path fill="#049b53" d="M289.5 509.83A258.82 258.82 0 0 1 256 512 256.09 256.09 0 0 1 15.85 344.87h67a256.15 256.15 0 0 0 206.65 165z" opacity="1" data-original="#049b53"></path><circle cx="408.07" cy="96.45" r="16.28" fill="#ef9050" opacity="1" data-original="#ef9050"></circle><circle cx="384.09" cy="72.47" r="11.53" fill="#ef9050" opacity="1" data-original="#ef9050"></circle><circle cx="256" cy="256" r="79.86" fill="#3e436d" opacity="1" data-original="#3e436d"></circle><path fill="#ffffff" d="m318.86 249.5-3.73-.83c0-.3-.07-.6-.11-.89l3.38-1.78a2.82 2.82 0 0 0 1.43-3.24l-1.93-7.22a2.84 2.84 0 0 0-2.86-2.1l-3.81.16c-.11-.28-.22-.56-.34-.84l2.8-2.57a2.82 2.82 0 0 0 .54-3.5l-3.74-6.48a2.82 2.82 0 0 0-3.3-1.28l-3.64 1.14c-.18-.24-.37-.47-.55-.7l2.05-3.23a2.84 2.84 0 0 0-.39-3.53l-5.28-5.28a2.84 2.84 0 0 0-3.53-.39l-3.23 2.06-.7-.55 1.14-3.64a2.82 2.82 0 0 0-1.28-3.3l-6.48-3.74a2.82 2.82 0 0 0-3.5.54l-2.57 2.8-.84-.34.16-3.81a2.84 2.84 0 0 0-2.1-2.86l-7.22-1.93a2.82 2.82 0 0 0-3.23 1.43l-1.78 3.4-.89-.11-.83-3.73a2.82 2.82 0 0 0-2.76-2.22h-7.48a2.82 2.82 0 0 0-2.76 2.22l-.83 3.73-.89.11-1.78-3.4a2.82 2.82 0 0 0-3.24-1.43l-7.22 1.93a2.84 2.84 0 0 0-2.1 2.86l.16 3.81-.84.34-2.57-2.8a2.82 2.82 0 0 0-3.5-.54l-6.48 3.74a2.82 2.82 0 0 0-1.28 3.3l1.14 3.64-.7.55-3.22-2a2.84 2.84 0 0 0-3.53.39l-5.28 5.28a2.84 2.84 0 0 0-.39 3.53l2.05 3.23c-.18.23-.37.46-.55.7l-3.64-1.14a2.82 2.82 0 0 0-3.3 1.28l-3.74 6.48a2.82 2.82 0 0 0 .54 3.5l2.8 2.57c-.12.28-.23.56-.34.84l-3.81-.16a2.84 2.84 0 0 0-2.86 2.1l-1.93 7.22a2.82 2.82 0 0 0 1.43 3.18l3.38 1.77c0 .29-.07.59-.11.89l-3.73.83a2.82 2.82 0 0 0-2.22 2.76v7.48a2.82 2.82 0 0 0 2.22 2.76l3.73.83c0 .3.07.6.11.89L193.6 266a2.82 2.82 0 0 0-1.43 3.24l1.93 7.22a2.84 2.84 0 0 0 2.86 2.1l3.81-.16c.11.28.22.56.34.84l-2.8 2.57a2.82 2.82 0 0 0-.54 3.5l3.74 6.48a2.82 2.82 0 0 0 3.3 1.28l3.64-1.14c.18.24.37.47.55.7l-2 3.22a2.84 2.84 0 0 0 .39 3.53l5.28 5.28a2.84 2.84 0 0 0 3.53.39l3.23-2.05.7.55-1.14 3.64a2.82 2.82 0 0 0 1.28 3.3l6.48 3.74a2.82 2.82 0 0 0 3.5-.54l2.57-2.8.84.34-.16 3.81a2.84 2.84 0 0 0 2.1 2.86l7.22 1.93a2.82 2.82 0 0 0 3.18-1.43l1.77-3.38.89.11.83 3.73a2.82 2.82 0 0 0 2.76 2.22h7.48a2.82 2.82 0 0 0 2.76-2.22l.83-3.73.89-.11 1.79 3.38a2.82 2.82 0 0 0 3.24 1.43l7.22-1.93a2.84 2.84 0 0 0 2.1-2.86l-.16-3.81.84-.34 2.57 2.8a2.82 2.82 0 0 0 3.5.54l6.48-3.74a2.82 2.82 0 0 0 1.28-3.3l-1.14-3.64.7-.55 3.23 2.05a2.84 2.84 0 0 0 3.53-.39l5.28-5.28a2.84 2.84 0 0 0 .39-3.53l-2.06-3.23c.18-.23.37-.46.55-.7l3.64 1.14a2.82 2.82 0 0 0 3.3-1.28l3.74-6.48a2.82 2.82 0 0 0-.54-3.5l-2.8-2.57c.12-.28.23-.56.34-.84l3.81.16a2.84 2.84 0 0 0 2.86-2.1l1.93-7.22a2.82 2.82 0 0 0-1.43-3.23l-3.4-1.78c0-.29.07-.59.11-.89l3.73-.83a2.82 2.82 0 0 0 2.22-2.76v-7.48a2.82 2.82 0 0 0-2.2-2.76z" opacity="1" data-original="#ffffff"></path><g fill="#3e436d"><path d="M268.28 256a4.11 4.11 0 0 1 0 .7 10 10 0 0 1-.24 1.91 11.84 11.84 0 0 1-.9 2.63 12.32 12.32 0 0 1-1.18 2 11.87 11.87 0 0 1-1.88 2 10.11 10.11 0 0 1-1.45 1.08 11.54 11.54 0 0 1-2.5 1.21 10.8 10.8 0 0 1-2.71.63 10.63 10.63 0 0 1-2.76 0 11.22 11.22 0 0 1-2.15-.43 11 11 0 0 1-2.54-1.1 11.59 11.59 0 0 1-1.7-1.16 11.12 11.12 0 0 1-1.93-2 10.74 10.74 0 0 1-1.3-2 11.18 11.18 0 0 1-.93-2.62 10.14 10.14 0 0 1-.31-2.14 4.11 4.11 0 0 1 0-.7 12.87 12.87 0 0 1 .18-2.08 9.64 9.64 0 0 1 .47-1.83 10.66 10.66 0 0 1 1.18-2.51 9.71 9.71 0 0 1 1.18-1.62 11.87 11.87 0 0 1 2.05-1.88 12.57 12.57 0 0 1 4.81-2.13c.35-.06.68-.11 1-.15s.91-.08 1.38-.08.93 0 1.38.08a9 9 0 0 1 1.63.3 10.74 10.74 0 0 1 2.6 1 10.61 10.61 0 0 1 1.89 1.21 10.35 10.35 0 0 1 2 1.93 9.27 9.27 0 0 1 1.1 1.55 11.55 11.55 0 0 1 1.13 2.53 10.51 10.51 0 0 1 .39 1.61 12.87 12.87 0 0 1 .11 2.06z" fill="#3e436d" opacity="1" data-original="#3e436d"></path><path d="M268.28 256a4.11 4.11 0 0 1 0 .7 10 10 0 0 1-.24 1.91 11.84 11.84 0 0 1-.9 2.63 12.32 12.32 0 0 1-1.18 2 11.87 11.87 0 0 1-1.88 2 10.11 10.11 0 0 1-1.45 1.08 11.54 11.54 0 0 1-2.5 1.21 10.8 10.8 0 0 1-2.71.63 10.63 10.63 0 0 1-2.76 0 11.22 11.22 0 0 1-2.15-.43 11 11 0 0 1-2.54-1.1 11.59 11.59 0 0 1-1.7-1.16 11.12 11.12 0 0 1-1.93-2 10.74 10.74 0 0 1-1.3-2 11.18 11.18 0 0 1-.93-2.62 10.14 10.14 0 0 1-.31-2.14 4.11 4.11 0 0 1 0-.7 12.87 12.87 0 0 1 .18-2.08 9.64 9.64 0 0 1 .47-1.83 10.66 10.66 0 0 1 1.18-2.51 9.71 9.71 0 0 1 1.18-1.62 11.87 11.87 0 0 1 2.05-1.88 12.57 12.57 0 0 1 4.81-2.13c.35-.06.68-.11 1-.15s.91-.08 1.38-.08.93 0 1.38.08a9 9 0 0 1 1.63.3 10.74 10.74 0 0 1 2.6 1 10.61 10.61 0 0 1 1.89 1.21 10.35 10.35 0 0 1 2 1.93 9.27 9.27 0 0 1 1.1 1.55 11.55 11.55 0 0 1 1.13 2.53 10.51 10.51 0 0 1 .39 1.61 12.87 12.87 0 0 1 .11 2.06zM239 256.7h-34.29a1.39 1.39 0 1 1 0-2.78h34.37A17.87 17.87 0 0 0 239 256zM240.56 263.25 208.93 276a1.45 1.45 0 0 1-.51.1 1.39 1.39 0 0 1-.52-2.68l31.7-12.76a17.42 17.42 0 0 0 .96 2.59zM207.77 235.84a1.41 1.41 0 0 1 1.81-.77l31.5 12.69a16.06 16.06 0 0 0-1.15 2.53l-31.38-12.64a1.4 1.4 0 0 1-.78-1.81zM244.84 268.89l-24.38 24.36a1.39 1.39 0 0 1-1 .42 1.4 1.4 0 0 1-1-2.38l24.39-24.39a16.65 16.65 0 0 0 1.99 1.99zM219 220.21a1.37 1.37 0 0 1 0-2 1.39 1.39 0 0 1 1.95 0l24.42 24.42a17.36 17.36 0 0 0-2 1.9zM248.13 271.12a14.67 14.67 0 0 0 2.55 1.08l-12.56 31.18a1.41 1.41 0 0 1-1.3.87 1.65 1.65 0 0 1-.52-.1 1.41 1.41 0 0 1-.76-1.82zM236.19 208.22a1.38 1.38 0 1 1 2.56-1l13 32.29a15.6 15.6 0 0 0-2.62.91zM256 239c-.47 0-.93 0-1.38.05v-34.34a1.38 1.38 0 1 1 2.76 0V239H256zM256 273.05c.47 0 .93 0 1.38-.05v34.29a1.38 1.38 0 1 1-2.76 0V273c.45 0 .91.05 1.38.05zM263.4 240.63a17.57 17.57 0 0 0-2.59-1l13.07-32.44a1.39 1.39 0 1 1 2.58 1zM277.1 302.33a1.39 1.39 0 0 1-.77 1.82 1.5 1.5 0 0 1-.52.1 1.39 1.39 0 0 1-1.28-.87L261.89 272a15.89 15.89 0 0 0 2.51-1.16zM266.91 242.89l24.14-24.14a1.38 1.38 0 0 1 1.95 2l-24.12 24.13a16.5 16.5 0 0 0-1.97-1.99zM293.5 290.8a1.39 1.39 0 0 1-2 2l-24.11-24.11a17.36 17.36 0 0 0 1.9-2zM271 248l32-12.91a1.39 1.39 0 0 1 1 2.58l-32 12.88a14.8 14.8 0 0 0-1-2.55zM305.51 275.23a1.41 1.41 0 0 1-1.28.87 1.66 1.66 0 0 1-.53-.1l-32.16-13a18 18 0 0 0 .93-2.61l32.28 13a1.4 1.4 0 0 1 .76 1.84zM308.69 255.3a1.4 1.4 0 0 1-1.4 1.4H273v-.7a17.87 17.87 0 0 0-.13-2.08h34.37a1.39 1.39 0 0 1 1.45 1.38z" fill="#3e436d" opacity="1" data-original="#3e436d"></path></g></g></svg>
+                </div>
+                <div class="user hidden items-center gap-x-1.5 xl:flex">
+                    <svg style="fill: white;" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M16 16c-4.064 0-6.4-2.336-6.4-6.4 0-3.536 2.864-6.4 6.4-6.4s6.4 2.864 6.4 6.4c0 4-2.4 6.4-6.4 6.4zM16 6.4c-1.76 0-3.2 1.44-3.2 3.2 0 2.272 0.928 3.2 3.2 3.2 2.24 0 3.2-0.96 3.2-3.2 0-1.76-1.44-3.2-3.2-3.2z"></path><path d="M27.2 28.8h-22.4v-3.2c0-4.416 3.584-8 8-8h6.4c4.416 0 8 3.584 8 8v3.2zM8 25.6h16c0-2.64-2.16-4.8-4.8-4.8h-6.4c-2.64 0-4.8 2.16-4.8 4.8z"></path></svg>
+                    <div class="welcome">
+                        <p class="text-[#ffffff7a]">Welcome</p>
+                        <div class="sign-in flex items-center gap-1 text-xs">
+                            <a href="html/signin.html">Sign in</a>
+                            <p>/</p>
+                            <a href="html/signin.html">Register</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart">
+                    <svg class="cursor-pointer relative" style="fill: white;" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M25.248 22.4l3.552-14.4h-18.528l-0.96-4.8h-6.112v3.2h3.488l3.2 16h15.36zM24.704 11.2l-1.968 8h-10.24l-1.6-8h13.808z"></path><path d="M25.6 26.4c0 1.325-1.075 2.4-2.4 2.4s-2.4-1.075-2.4-2.4c0-1.325 1.075-2.4 2.4-2.4s2.4 1.075 2.4 2.4z"></path><path d="M14.4 26.4c0 1.325-1.075 2.4-2.4 2.4s-2.4-1.075-2.4-2.4c0-1.325 1.075-2.4 2.4-2.4s2.4 1.075 2.4 2.4z"></path></svg>
+                </div>
+            </div>
+        </div>
+        <div class="search flex items-center w-full mt-5 xl:hidden">
+            <input class="w-full h-10 focus:ring-[#08091b] border-0 focus:border-[#08091b] text-black focus:outline-none rounded-s-sm" type="text" placeholder="search for anything">
+            <div class="search-btn bg-[#b7ff1d] px-3 h-10 flex items-center justify-center rounded-e-sm hover:bg-[#81b909] transition duration-300 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M225.474 0C101.151 0 0 101.151 0 225.474c0 124.33 101.151 225.474 225.474 225.474 124.33 0 225.474-101.144 225.474-225.474C450.948 101.151 349.804 0 225.474 0zm0 409.323c-101.373 0-183.848-82.475-183.848-183.848S124.101 41.626 225.474 41.626s183.848 82.475 183.848 183.848-82.475 183.849-183.848 183.849z" fill="#fff" opacity="1" data-original="#000000"></path><path d="M505.902 476.472 386.574 357.144c-8.131-8.131-21.299-8.131-29.43 0-8.131 8.124-8.131 21.306 0 29.43l119.328 119.328A20.74 20.74 0 0 0 491.187 512a20.754 20.754 0 0 0 14.715-6.098c8.131-8.124 8.131-21.306 0-29.43z" fill="#fff" opacity="1" data-original="#000000"></path></g></svg>
+            </div>
+        </div>
+    </nav>
+    <!-- sidebar -->
+    <div id="SideBar" class="sidebar z-50 fixed left-0 top-0 translate-x-[-100%] bg-[#ffff] overflow-y-scroll h-[100vh] w-80 shadow-lg text-[#1d2128] text-sm font-medium transition duration-300">
+        <div class="main-header bg-[#ecf0f4] flex items-center justify-between py-3 px-5">
+            <a href="" class="flex items-center gap-2">
+                <svg width="20" height="20" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M16 16c-4.064 0-6.4-2.336-6.4-6.4 0-3.536 2.864-6.4 6.4-6.4s6.4 2.864 6.4 6.4c0 4-2.4 6.4-6.4 6.4zM16 6.4c-1.76 0-3.2 1.44-3.2 3.2 0 2.272 0.928 3.2 3.2 3.2 2.24 0 3.2-0.96 3.2-3.2 0-1.76-1.44-3.2-3.2-3.2z"></path><path d="M27.2 28.8h-22.4v-3.2c0-4.416 3.584-8 8-8h6.4c4.416 0 8 3.584 8 8v3.2zM8 25.6h16c0-2.64-2.16-4.8-4.8-4.8h-6.4c-2.64 0-4.8 2.16-4.8 4.8z"></path></svg>
+                <p>Hello,Sign in</p>
+            </a>
+            <div id="close" class="cursor-pointer">
+                <svg width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M28.336 5.936l-2.272-2.272-10.064 10.080-10.064-10.080-2.272 2.272 10.080 10.064-10.080 10.064 2.272 2.272 10.064-10.080 10.064 10.080 2.272-2.272-10.080-10.064z"></path></svg>
+            </div>
+        </div>
+        <div class="bottom-sidebar px-8 py-5">
+            <div class="order-help-center flex flex-col gap-6 pb-5">
+                <div class="track-order">
+                    <a href="" class="flex gap-3">
+                        <svg width="20" height="20" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M24.528 3.2h-17.056l-4.272 8.96v16.64h25.6v-16.64l-4.272-8.96zM24.8 11.2h-7.2v-4.8h4.912l2.288 4.8zM9.488 6.4h4.912v4.8h-7.2l2.288-4.8zM6.4 25.6v-11.2h8v3.2h3.2v-3.2h8v11.2h-19.2z"></path></svg>
+                        <p>Track Order</p>
+                    </a>
+                </div>
+                <div class="help-center">
+                    <a href="" class="flex gap-3">
+                        <svg width="20" height="20" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M16 6.4c5.296 0 9.6 4.304 9.6 9.6s-4.304 9.6-9.6 9.6-9.6-4.304-9.6-9.6 4.304-9.6 9.6-9.6zM16 3.2c-7.072 0-12.8 5.728-12.8 12.8s5.728 12.8 12.8 12.8 12.8-5.728 12.8-12.8-5.728-12.8-12.8-12.8v0z"></path><path d="M14.8 18.16c-0.048-0.224-0.064-0.448-0.064-0.704 0-0.752 0.304-1.568 1.216-2.256l0.816-0.608c0.432-0.32 0.576-0.704 0.576-1.12 0-0.624-0.464-1.232-1.424-1.232-0.928 0-1.472 0.752-1.472 1.504 0 0.368 0.032 0.528 0.048 0.592l-2.24-0.080c-0.048-0.224-0.064-0.464-0.064-0.672 0-1.872 1.392-3.456 3.728-3.456 2.592 0 3.888 1.552 3.888 3.152 0 1.28-0.592 2.16-1.552 2.88l-0.608 0.448c-0.56 0.416-0.944 0.832-0.944 1.552h-1.904zM15.808 19.104c0.768 0 1.392 0.624 1.392 1.392 0 0.752-0.624 1.376-1.392 1.376s-1.376-0.624-1.376-1.376c0-0.768 0.608-1.392 1.376-1.392z"></path></svg>
+                        <p>Help Center</p>
+                    </a>
+                </div>
+            </div>
+            <hr>
+            <div class="short-category flex flex-col gap-7 py-5 font-medium text-sm">
+                <div class="heading">
+                    <p>Short by Category</p>
+                </div>
+                <div class="TVs-Video">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M27.2 4.8h-22.4c-0.88 0-1.6 0.72-1.6 1.6v14.4c0 0.88 0.72 1.6 1.6 1.6h8v1.6h-1.6c-0.88 0-1.6 0.72-1.6 1.6s0.72 1.6 1.6 1.6h9.6c0.88 0 1.6-0.72 1.6-1.6s-0.72-1.6-1.6-1.6h-1.6v-1.6h8c0.88 0 1.6-0.72 1.6-1.6v-14.4c0-0.88-0.72-1.6-1.6-1.6zM25.6 19.2h-19.2v-11.2h19.2v11.2z"></path></svg>
+                            <span>TVs & Video</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Laptops-Computers">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M24 8v11.2h-16v-11.2h16zM24.8 4.8h-17.6c-1.328 0-2.4 1.072-2.4 2.4v15.2h22.4v-15.2c0-1.328-1.072-2.4-2.4-2.4v0z"></path><path d="M28.4 24h-8c0 0.656-0.544 1.2-1.2 1.2h-6.4c-0.656 0-1.2-0.544-1.2-1.2h-8c-0.224 0-0.4 0.176-0.4 0.4 0 1.552 1.248 2.8 2.8 2.8h20c1.552 0 2.8-1.248 2.8-2.8 0-0.224-0.176-0.4-0.4-0.4z"></path></svg>
+                            <span>Laptops & Computers</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="iPads-Tablets">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M25.6 4.8h-19.2c-1.76 0-3.2 1.44-3.2 3.2v16c0 1.76 1.44 3.2 3.2 3.2h19.2c1.76 0 3.2-1.44 3.2-3.2v-16c0-1.76-1.44-3.2-3.2-3.2zM25.6 24h-19.2v-16h19.2v16z"></path><path d="M18 20.48c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z"></path></svg>
+                            <span>iPads & Tablets</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Cell-Phones">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M20.8 1.6h-9.6c-2.64 0-4.8 2.16-4.8 4.8v19.2c0 2.64 2.16 4.8 4.8 4.8h9.6c2.64 0 4.8-2.16 4.8-4.8v-19.2c0-2.64-2.16-4.8-4.8-4.8zM22.4 25.6c0 0.88-0.72 1.6-1.6 1.6h-9.6c-0.88 0-1.6-0.72-1.6-1.6v-19.2c0-0.88 0.72-1.6 1.6-1.6h1.6c0 0.88 0.72 1.6 1.6 1.6h3.2c0.88 0 1.6-0.72 1.6-1.6h1.6c0.88 0 1.6 0.72 1.6 1.6v19.2z"></path></svg>
+                            <span>Cell Phones</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Printer-Supplies">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20">
+                                <path d="M25.6 8h-1.6v-4.8h-16v4.8h-1.6c-1.76 0-3.2 1.44-3.2 3.2v9.6c0 1.76 1.44 3.2 3.2 3.2h1.6v4.8h16v-4.8h1.6c1.76 0 3.2-1.44 3.2-3.2v-9.6c0-1.76-1.44-3.2-3.2-3.2zM11.2 6.4h9.6v1.6h-9.6v-1.6zM20.8 25.6h-9.6v-4.8h9.6v4.8zM25.6 20.8h-1.6v-3.2h-16v3.2h-1.6v-9.6h19.2v9.6z"></path>
+                                <path d="M24 14.4c0 0.884-0.716 1.6-1.6 1.6s-1.6-0.716-1.6-1.6c0-0.884 0.716-1.6 1.6-1.6s1.6 0.716 1.6 1.6z"></path>
+                                </svg>
+                            <span>Printer & Supplies</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Headphones">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M25.056 6.944c-2.416-2.416-5.632-3.744-9.056-3.744s-6.64 1.328-9.056 3.744c-4.24 4.24-4.944 10.88-1.744 15.904v1.552c0 2.432 1.968 4.4 4.4 4.4h1.2c1.76 0 3.2-1.44 3.2-3.2v-6.4c0-1.76-1.44-3.2-3.2-3.2h-1.2c-1.2 0-2.288 0.48-3.088 1.264-0.384-2.88 0.528-5.888 2.704-8.048 1.808-1.824 4.224-2.816 6.784-2.816s4.976 0.992 6.784 2.816c2.176 2.176 3.088 5.184 2.704 8.064-0.784-0.784-1.888-1.28-3.088-1.28h-1.2c-1.76 0-3.2 1.44-3.2 3.2v6.4c0 1.76 1.44 3.2 3.2 3.2h1.2c2.432 0 4.4-1.968 4.4-4.4v-1.552c3.2-5.040 2.512-11.632-1.744-15.904zM8.4 20.4c0-0.656 0.544-1.2 1.2-1.2h1.2v6.4h-1.2c-0.656 0-1.2-0.544-1.2-1.2v-4zM23.6 24.4c0 0.656-0.544 1.2-1.2 1.2h-1.2v-6.4h1.2c0.656 0 1.2 0.544 1.2 1.2v4z"></path></svg>
+                            <span>Headphones</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Networking">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M25.056 3.744c-0.624-0.624-1.632-0.624-2.256 0s-0.624 1.632 0 2.256c3.744 3.744 3.744 9.84 0 13.584-0.624 0.624-0.624 1.632 0 2.256 0.32 0.32 0.72 0.464 1.136 0.464s0.816-0.16 1.136-0.464c4.976-4.976 4.976-13.104-0.016-18.096z"></path><path d="M6.4 12.8c0-2.56 0.992-4.976 2.816-6.784 0.624-0.624 0.624-1.632 0-2.256s-1.632-0.624-2.256 0c-2.432 2.4-3.76 5.616-3.76 9.040s1.328 6.64 3.744 9.056c0.32 0.32 0.72 0.464 1.136 0.464s0.816-0.16 1.136-0.464c0.624-0.624 0.624-1.632 0-2.256-1.824-1.824-2.816-4.24-2.816-6.8z"></path><path d="M21.664 7.136c-0.624-0.624-1.632-0.624-2.256 0s-0.624 1.632 0 2.256c1.872 1.872 1.872 4.912 0 6.784-0.624 0.624-0.624 1.632 0 2.256 0.32 0.32 0.72 0.464 1.136 0.464s0.816-0.16 1.136-0.464c3.088-3.088 3.088-8.176-0.016-11.296z"></path><path d="M12.608 7.136c-0.624-0.624-1.632-0.624-2.256 0-3.12 3.12-3.12 8.192 0 11.312 0.32 0.32 0.72 0.464 1.136 0.464s0.816-0.16 1.136-0.464c0.624-0.624 0.624-1.632 0-2.256-1.872-1.872-1.872-4.912 0-6.784 0.608-0.624 0.608-1.648-0.016-2.272z"></path><path d="M16 11.2c-0.88 0-1.6 0.72-1.6 1.6v14.4c0 0.88 0.72 1.6 1.6 1.6s1.6-0.72 1.6-1.6v-14.4c0-0.88-0.72-1.6-1.6-1.6z"></path></svg>
+                            <span>Networking</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Wearable-Technology">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M21.904 8.208l-0.656-3.936c-0.256-1.536-1.6-2.672-3.152-2.672h-4.192c-1.552 0-2.896 1.136-3.152 2.672l-0.656 3.936c-1.216 0.448-2.096 1.616-2.096 2.992v9.6c0 1.376 0.88 2.544 2.096 2.992l0.656 3.936c0.256 1.536 1.6 2.672 3.152 2.672h4.176c1.568 0 2.896-1.136 3.152-2.672l0.656-3.936c1.232-0.448 2.112-1.616 2.112-2.992v-9.6c0-1.376-0.88-2.544-2.096-2.992zM20.8 20.8h-9.6v-9.6h9.6v9.6zM13.904 4.8h4.176l0.528 3.2h-5.232l0.528-3.2zM18.096 27.2h-4.192l-0.528-3.2h5.248l-0.528 3.2z"></path></svg>                                
+                            <span>Wearable Technologys</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Smart Home">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M26.784 8.944l-8-5.712c-1.664-1.2-3.904-1.2-5.584 0l-8 5.712c-1.248 0.896-2 2.352-2 3.904v11.152c0 2.64 2.16 4.8 4.8 4.8h16c2.64 0 4.8-2.16 4.8-4.8v-11.152c0-1.552-0.752-3.008-2.016-3.904zM25.6 24c0 0.88-0.72 1.6-1.6 1.6h-16c-0.88 0-1.6-0.72-1.6-1.6v-11.152c0-0.512 0.256-1.008 0.672-1.296l8-5.712c0.272-0.208 0.608-0.304 0.928-0.304s0.656 0.096 0.928 0.304l8 5.712c0.416 0.288 0.672 0.784 0.672 1.296v11.152z"></path><path d="M8.080 14.48l2.256 2.256c1.52-1.504 3.52-2.336 5.664-2.336 2.128 0 4.144 0.832 5.664 2.336l2.256-2.256c-2.112-2.112-4.928-3.28-7.92-3.28s-5.808 1.168-7.92 3.28z"></path><path d="M11.472 17.872l2.256 2.256c1.216-1.216 3.312-1.216 4.528 0l2.256-2.256c-2.4-2.416-6.624-2.416-9.040 0z"></path><path d="M14.864 21.264c-0.624 0.624-0.624 1.632 0 2.256s1.632 0.624 2.256 0c0.624-0.624 0.624-1.632 0-2.256-0.608-0.624-1.632-0.624-2.256 0z"></path></svg>
+                            <span>Smart Home</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Cameras">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg viewBox="0 0 32 32" width="20" height="20"><path d="M25.6 8h-5.408c-0.608 0-1.168-0.336-1.424-0.88l-0.72-1.424c-0.272-0.56-0.832-0.896-1.44-0.896h-6.016c-0.608 0-1.168 0.336-1.44 0.88l-0.704 1.44c-0.272 0.544-0.832 0.88-1.44 0.88h-0.608c-1.76 0-3.2 1.44-3.2 3.2v12.8c0 1.76 1.44 3.2 3.2 3.2h19.2c1.76 0 3.2-1.44 3.2-3.2v-12.8c0-1.76-1.44-3.2-3.2-3.2zM25.6 24h-19.2v-12.8h0.608c0.064 0 0.128-0.016 0.192-0.016v0.016h12.8v-0.016c0.064 0 0.128 0.016 0.192 0.016h5.408v12.8z"></path><path d="M13.6 12.8c-2.656 0-4.8 2.144-4.8 4.8s2.144 4.8 4.8 4.8 4.8-2.144 4.8-4.8-2.144-4.8-4.8-4.8zM13.6 19.2c-0.88 0-1.6-0.72-1.6-1.6s0.72-1.6 1.6-1.6 1.6 0.72 1.6 1.6-0.72 1.6-1.6 1.6z"></path><path d="M24.4 14.4c0 1.105-0.895 2-2 2s-2-0.895-2-2c0-1.105 0.895-2 2-2s2 0.895 2 2z"></path></svg>
+                            <span>Cameras</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="side-nav flex flex-col gap-7 py-5 text-base font-medium">
+                <a href="">Home</a>
+                <a href="">Shop</a>
+                <a href="">Features</a>
+                <a href="">Pages</a>
+                <a href="">Blog</a>
+            </div>
+            <hr>
+            <div class="preference flex flex-col gap-5 py-5 font-normal">
+                <div class="header">
+                    <p class="font-medium">Preference</p>
+                </div>
+                <div class="language">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg width="20" height="20" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M29.509 13.714c-0.137-0.777-0.32-1.554-0.594-2.286-1.737-4.891-6.149-8.503-11.474-9.074 0 0 0-0.023-0.023-0.023 0 0 0 0 0 0.023-0.457-0.046-0.937-0.069-1.417-0.069s-0.96 0.023-1.417 0.069c0 0 0 0 0-0.023 0 0 0 0.023-0.023 0.023-5.326 0.571-9.737 4.183-11.474 9.074-0.251 0.731-0.457 1.509-0.594 2.286-0.114 0.754-0.206 1.509-0.206 2.286s0.091 1.531 0.206 2.286c0.137 0.777 0.32 1.554 0.594 2.286 1.737 4.891 6.149 8.503 11.474 9.074 0 0 0 0.023 0.023 0.023 0 0 0 0 0-0.023 0.457 0.046 0.937 0.069 1.417 0.069s0.96-0.023 1.417-0.069c0 0 0 0 0 0.023 0 0 0-0.023 0.023-0.023 5.326-0.549 9.737-4.183 11.474-9.074 0.251-0.731 0.457-1.509 0.594-2.286 0.114-0.754 0.206-1.509 0.206-2.286s-0.091-1.531-0.206-2.286zM26.469 11.429h-5.211c-0.434-2.263-1.189-4.411-2.217-6.4 3.314 0.937 6.057 3.291 7.429 6.4zM19.429 16c0 0.777-0.046 1.531-0.114 2.286h-6.629c-0.069-0.754-0.114-1.509-0.114-2.286s0.046-1.531 0.114-2.286h6.606c0.091 0.754 0.137 1.509 0.137 2.286zM16.16 27.406c-0.069 0-0.114 0.023-0.16 0.023s-0.091-0.023-0.16-0.023c-1.28-2.080-2.24-4.366-2.766-6.834h5.874c-0.549 2.469-1.509 4.754-2.789 6.834zM15.84 4.594c0.069 0 0.114-0.023 0.16-0.023s0.091 0.023 0.16 0.023c1.28 2.080 2.24 4.366 2.766 6.834h-5.851c0.526-2.469 1.486-4.754 2.766-6.834zM12.96 5.029c-1.029 1.989-1.783 4.137-2.217 6.4h-5.211c1.371-3.109 4.114-5.463 7.429-6.4zM4.571 16c0-0.777 0.091-1.554 0.229-2.286h5.6c-0.069 0.754-0.114 1.509-0.114 2.286s0.046 1.531 0.114 2.286h-5.6c-0.137-0.731-0.229-1.509-0.229-2.286zM5.531 20.571h5.211c0.434 2.263 1.211 4.411 2.217 6.4-3.314-0.937-6.057-3.291-7.429-6.4zM19.040 26.971c1.029-1.989 1.783-4.137 2.217-6.4h5.189c-1.349 3.109-4.091 5.463-7.406 6.4zM21.6 18.286c0.069-0.754 0.114-1.509 0.114-2.286s-0.046-1.531-0.114-2.286h5.6c0.137 0.731 0.229 1.509 0.229 2.286s-0.091 1.554-0.229 2.286h-5.6z"></path></svg>
+                            <span>English</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+                <div class="Money">
+                    <div class="flex items-center justify-between gap-2">
+                        <div class="flex items-center gap-3">
+                            <svg width="20" height="20" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M27.429 6.857h-22.857c-1.257 0-2.286 1.029-2.286 2.286v13.714c0 1.257 1.029 2.286 2.286 2.286h22.857c1.257 0 2.286-1.029 2.286-2.286v-13.714c0-1.257-1.029-2.286-2.286-2.286zM4.571 9.143h3.429c0 1.897-1.531 3.429-3.429 3.429v-3.429zM4.571 22.857v-3.429c1.897 0 3.429 1.531 3.429 3.429h-3.429zM27.429 22.857h-3.429c0-1.897 1.531-3.429 3.429-3.429v3.429zM27.429 17.143c-3.154 0-5.714 2.56-5.714 5.714h-11.429c0-3.154-2.56-5.714-5.714-5.714v-2.286c3.154 0 5.714-2.56 5.714-5.714h11.429c0 3.154 2.56 5.714 5.714 5.714v2.286zM27.429 12.571c-1.897 0-3.429-1.531-3.429-3.429h3.429v3.429z"></path><path d="M16 11.429c-2.514 0-4.571 2.057-4.571 4.571s2.057 4.571 4.571 4.571 4.571-2.057 4.571-4.571c0-2.514-2.057-4.571-4.571-4.571zM16 18.286c-1.257 0-2.286-1.029-2.286-2.286s1.029-2.286 2.286-2.286 2.286 1.029 2.286 2.286-1.029 2.286-2.286 2.286z"></path></svg>
+                            <span>Rupees</span>
+                        </div>
+                        <svg class="fill-[#7c818b] w-[10px]" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- shopping cart -->
+    <div id="shoppingCart" class="Shoppingcarts z-10 fixed right-0 top-0 translate-x-[100%] bg-[#ffff] overflow-y-scroll h-[100vh] w-80 shadow-lg text-[#1d2128] text-sm font-medium transition duration-300 md:w-[500px]">
+        <div class="main-header flex items-center justify-between py-3 px-5">
+            <p class="text-lg font-medium">Shopping Cart</p>
+            <div id="CartClose" class="cursor-pointer">
+                <svg width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M28.336 5.936l-2.272-2.272-10.064 10.080-10.064-10.080-2.272 2.272 10.080 10.064-10.080 10.064 2.272 2.272 10.064-10.080 10.064 10.080 2.272-2.272-10.080-10.064z"></path></svg>
+            </div>
+        </div>
+        <div class="Cartlist px-8 py-5"></div>
+    </div>
+
+     <!-- header -->
+     <header class="flex items-center justify-between px-5 py-2 border-b overflow-x-auto overflow-hidden">
+        <div class="left-header flex items-center gap-5">
+            <div class="hot-deal z-[-100]">
+                <a href="" class="flex items-center w-max gap-2 relative max-w-max after:content-[''] after:absolute after:left-0 after:-bottom-[8.5px] after:w-0 after:m-auto after:h-[1.6px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
+                    <svg viewBox="0 0 32 32" width="14" height="14"><path d="M29.44 17.227c0 7.413-6.027 13.44-13.44 13.44s-13.44-6.027-13.44-13.44c0-6.267 4.080-6.853 3.893-10.48 5.093 1.787 3.867 7.813 3.867 7.813 6.693-8.293 3.467-13.227 3.467-13.227s11.36 3.2 7.2 17.413c4.64-4.4 4.427-8.987 4.427-8.987s4.027 2.027 4.027 7.467z"></path></svg>
+                    <p class="text-sm font-medium text-[#1d2128]">Hot Deals</p>
+                </a>
+            </div>
+            <div class="whats-new z-[-100]">
+                <a href="" class="flex items-center w-max gap-2 relative max-w-max after:content-[''] after:absolute after:left-0 after:-bottom-[8.5px] after:w-0 after:m-auto after:h-[1.6px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
+                    <svg viewBox="0 0 32 32" width="14" height="14"><path d="M27.36 3.52l1.307 2.16 2.16 1.307-2.16 1.307-1.307 2.133-1.307-2.133-2.133-1.307 2.133-1.307z"></path><path d="M5.467 2.96l1.253 2.080 2.080 1.28-2.080 1.253-1.253 2.080-1.28-2.080-2.080-1.253 2.080-1.28z"></path><path d="M19.76 0l0.64 1.013 1.013 0.613-1.013 0.64-0.64 1.013-0.613-1.013-1.013-0.64 1.013-0.613z"></path><path d="M15.84 4.64l4.427 7.973 8.907 1.733-6.187 6.64 1.093 9.040-8.24-3.84-8.24 3.84 1.12-9.040-6.213-6.64 8.933-1.733z"></path></svg>
+                    <p class="text-sm font-medium text-[#1d2128]">What's New</p>
+                </a>
+            </div>
+            <div class="daily-deals z-[-100]">
+                <a href="" class="flex items-center w-max gap-2 relative max-w-max after:content-[''] after:absolute after:left-0 after:-bottom-[8.5px] after:w-0 after:m-auto after:h-[1.6px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
+                    <svg viewBox="0 0 32 32" width="14" height="14"><path d="M26.88 2.667h-10.373c-0.64 0-1.28 0.267-1.733 0.72l-11.387 11.387c-0.96 0.96-0.96 2.507 0 3.467l10.373 10.373c0.96 0.96 2.507 0.96 3.467 0l11.387-11.387c0.453-0.453 0.72-1.093 0.72-1.733v-10.373c0-1.36-1.093-2.453-2.453-2.453zM20.88 14.453c-1.84 0-3.333-1.493-3.333-3.333s1.493-3.333 3.333-3.333 3.333 1.493 3.333 3.333-1.467 3.333-3.333 3.333z"></path></svg>
+                    <p class="text-sm font-medium text-[#1d2128]">Daily Deals</p>
+                </a>
+            </div>
+            <div class="best-seller z-[-100]">
+                <a href="" class="flex items-center w-max gap-2 relative max-w-max after:content-[''] after:absolute after:left-0 after:-bottom-[8.5px] after:w-0 after:m-auto after:h-[1.6px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
+                    <svg viewBox="0 0 32 32" width="14" height="14"><path d="M28.667 9.333c-1.84 0-3.333 1.493-3.333 3.333 0 0.48 0.133 0.96 0.32 1.36l-4.32 1.973-3.547-7.253c0.907-0.587 1.547-1.573 1.547-2.747 0-1.84-1.493-3.333-3.333-3.333s-3.333 1.493-3.333 3.333c0 1.173 0.64 2.133 1.547 2.747l-3.547 7.253-4.32-1.947c0.187-0.427 0.32-0.88 0.32-1.387 0-1.84-1.493-3.333-3.333-3.333s-3.333 1.493-3.333 3.333 1.493 3.333 3.333 3.333c0.24 0 0.427-0.080 0.667-0.133l2.667 13.467h18.667l2.693-13.467c0.213 0.053 0.4 0.133 0.64 0.133 1.84 0 3.333-1.493 3.333-3.333s-1.493-3.333-3.333-3.333z"></path></svg>
+                    <p class="text-sm font-medium text-[#1d2128]">Best Sellers</p>
+                </a>
+            </div>
+            <div class="clearance z-[-100]">
+                <a href="" class="flex items-center w-max gap-2 relative max-w-max after:content-[''] after:absolute after:left-0 after:-bottom-[8.5px] after:w-0 after:m-auto after:h-[1.6px] hover:after:bg-black hover:after:w-full after:transition-all after:duration-500 cursor-pointer">
+                    <svg viewBox="0 0 32 32" width="14" height="14"><path d="M21.333 2.667h-10.667c-4.427 0-8 3.573-8 8v10.667c0 4.427 3.573 8 8 8h10.667c4.427 0 8-3.573 8-8v-10.667c0-4.427-3.573-8-8-8zM10.667 8c1.467 0 2.667 1.2 2.667 2.667s-1.2 2.667-2.667 2.667-2.667-1.2-2.667-2.667c0-1.467 1.2-2.667 2.667-2.667zM10.453 23.787l-2.24-2.24 13.333-13.333 2.267 2.267-13.36 13.307zM21.333 24c-1.467 0-2.667-1.2-2.667-2.667s1.2-2.667 2.667-2.667 2.667 1.2 2.667 2.667c0 1.467-1.2 2.667-2.667 2.667z"></path></svg>
+                    <p class="text-sm font-medium text-[#1d2128]">Clearance</p>
+                </a>
+            </div>
+        </div>
+        <div class="right-header hidden items-center gap-5 text-xs font-medium lg:flex">
+            <div class="track-order">
+                <a href="">Track Order</a>
+            </div>
+            <div class="help-center">
+                <a href="">Help Center</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- script -->
+    <script src="javascript/script.js"></script>
+    <script src="javascript/nav.js"></script>
+</body>
+</html>
