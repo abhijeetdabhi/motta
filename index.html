@@ -37,8 +37,76 @@
             border-radius: 10px;
         }
 
-        header::-webkit-scrollbar{
+        header::-webkit-scrollbar,
+        .best-product::-webkit-scrollbar{
             display: none;
+        }
+
+        img{
+            width: 100%;
+            height: auto;
+        }
+        
+        .slider-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+        }
+        
+        .slider{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .slide{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: all 0.4s;
+        }
+
+        .slide img{
+            height: inherit;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .navBtn{
+            width: 28px;
+            height: 56px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            box-shadow: 0 2px 6px 0 rgba(29,33,40,.16);
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .navBtn.left{
+            left: 1rem;
+        }
+
+        .navBtn.right{
+            right: 1rem;
+        }
+        
+        @media (min-width:768px){
+            .slider-container{
+                height: 450px;
+            }
+        }
+        
+        @media (min-width: 1024px){
+            .slider-container{
+                height: 450px;
+            }
         }
     </style>
 </head>
@@ -371,6 +439,128 @@
         </div>
     </header>
     
+
+
+    <!-- best-product -->
+    <div class="best-product flex flex-row items-center gap-6 justify-between overflow-x-scroll px-12 md:grid md:grid-cols-4 lg:flex xl:px-52 pt-6">
+        <div class="daily-deal">
+            <a href="" class="flex flex-col gap-2 w-full">
+                <div class="m-auto text-center">
+                    <img class="rounded-full max-w-[100px] m-auto" src="https://i0.wp.com/motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-dailydeals.jpg?w=300&ssl=1" alt="">
+                    <p class="text-sm font-medium line-clamp-1 cursor-vertical-text w-auto">Daily Deals</p>
+                </div>
+            </a>
+        </div>
+        <div class="headphone">
+            <a href="" class="flex flex-col gap-2 w-full">
+                <div class="m-auto text-center">
+                    <img class="rounded-full max-w-[100px] m-auto" src="https://i0.wp.com/motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-15off-Headphones.jpg?w=300&ssl=1" alt="">
+                    <p class="text-sm font-medium line-clamp-1 cursor-vertical-text w-auto">15% of Headphone</p>
+                </div>
+            </a>
+        </div>
+        <div class="accesories">
+            <a href="" class="flex flex-col gap-2 w-full">
+                <div class="m-auto text-center">
+                    <img class="rounded-full max-w-[100px] m-auto" src="https://i0.wp.com/motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-25-off-Tech-Accessories.jpg?w=300&ssl=1" alt="">
+                    <p class="text-sm font-medium line-clamp-1 cursor-vertical-text w-auto">25% of Tech Accessories</p>
+                </div>
+            </a>
+        </div>
+        <div class="apple">
+            <a href="" class="flex flex-col gap-2 w-full">
+                <div class="m-auto text-center">
+                    <img class="rounded-full max-w-[100px] m-auto" src="https://i0.wp.com/motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-New-From-Apple.jpg?w=300&ssl=1" alt="">
+                    <p class="text-sm font-medium line-clamp-1 cursor-vertical-text w-auto">New From Apple</p>
+                </div>
+            </a>
+        </div>
+        <div class="procesur">
+            <a href="" class="flex flex-col gap-2 w-full">
+                <div class="m-auto text-center">
+                    <img class="rounded-full max-w-[100px] m-auto" src="https://i0.wp.com/motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-think-outside-the-box.jpg?w=300&ssl=1" alt="">
+                    <p class="text-sm font-medium line-clamp-1 cursor-vertical-text w-auto">Think Outside The Box</p>
+                </div>
+            </a>
+        </div>
+        <div class="airpods">
+            <a href="" class="flex flex-col gap-2 w-full">
+                <div class="m-auto text-center">
+                    <img class="rounded-full max-w-[100px] m-auto" src="https://i0.wp.com/motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-Galaxy-Buds-Pro.jpg?w=300&ssl=1" alt="">
+                    <p class="text-sm font-medium line-clamp-1 cursor-vertical-text w-auto">Galaxy Buds Pro</p>
+                </div>
+            </a>
+        </div>
+        <div class="sales">
+            <a href="" class="flex flex-col gap-2 w-full">
+                <div class="m-auto text-center">
+                    <img class="rounded-full max-w-[100px] m-auto" src="https://i0.wp.com/motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-clearancesale.jpg?w=300&ssl=1" alt="">
+                    <p class="text-sm font-medium line-clamp-1 cursor-vertical-text w-auto">Clearance Sale</p>
+                </div>
+            </a>
+        </div>
+        <div class="rtx">
+            <a href="" class="flex flex-col gap-2 w-full">
+                <div class="m-auto text-center">
+                    <img class="rounded-full max-w-[100px] m-auto" src="https://i0.wp.com/motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-Geforce-Rtx-Series.jpg?w=300&ssl=1" alt="">
+                    <p class="text-sm font-medium line-clamp-1 cursor-vertical-text w-auto">GeForce RTX Series</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- heropage -->
+    <div class="heropage relative flex flex-col gap-10 px-12 mt-8 xl:flex-row xl:px-52">
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide grid grid-cols-1 items-center py-6 md:grid-cols-2 px-4 bg-[#f5efef] select-none">
+                    <div class="text-center flex flex-col items-center justify-center">
+                        <h1 class="text-[#1d2128] text-2xl font-bold lg:text-6xl">Full Screen Ahed</h1>
+                        <p class="text-[#282c33] font-medium text-base pt-4">Always-On Retina Display.</p>
+                        <p class="text-[#282c33] font-medium text-base pb-4">A Brighter view of you</p>
+                        <button class="text-white text-base font-medium bg-[#1d2128] px-6 py-2">Shop Now</button>
+                    </div>
+                    <img src="https://motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-slider01.jpg" alt="">
+                </div>
+                <div class="slide grid grid-cols-1 items-center py-6 md:grid-cols-2 select-none px-4 bg-[#d7c9c5]">
+                    <div class="text-center flex flex-col items-center justify-center">
+                        <h1 class="text-[#1d2128] text-2xl font-bold lg:text-6xl">Style and speed</h1>
+                        <p class="text-[#282c33] font-medium text-base py-4">Do it all with style, performance,<br> and speed</p>
+                        <button class="text-white text-base font-medium bg-[#1d2128] px-6 py-2">Shop Now</button>
+                    </div>
+                    <img src="https://motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-slider02.jpg" alt="">
+                </div>
+                <div class="slide grid grid-cols-1 items-center py-6 md:grid-cols-2 select-none px-4 bg-black">
+                    <div class="text-center flex flex-col items-center justify-center">
+                        <h1 class="text-[#b2e82f] text-2xl font-bold lg:text-6xl">RTX 30 Series Gamer PCs</h1>
+                        <p class="text-[#b2e82f] font-medium text-base py-4 uppercase">the unlimited play</p>
+                        <button class="text-black text-base font-medium bg-[#b2e82f] px-6 py-2">Shop Now</button>
+                    </div>
+                    <img src="https://motta.uix.store/electronic/wp-content/uploads/sites/6/2023/02/homev9-slider013.jpg" alt="">
+                </div>
+            </div>
+            <div class="navBtn left">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M84 108a3.988 3.988 0 0 1-2.828-1.172l-40-40a3.997 3.997 0 0 1 0-5.656l40-40c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656L49.656 64l37.172 37.172a3.997 3.997 0 0 1 0 5.656A3.988 3.988 0 0 1 84 108z" fill="#7c818b" opacity="1" data-original="#000000"></path></g></svg>
+            </div>
+            <div class="navBtn right">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M44 108a3.988 3.988 0 0 1-2.828-1.172 3.997 3.997 0 0 1 0-5.656L78.344 64 41.172 26.828c-1.563-1.563-1.563-4.094 0-5.656s4.094-1.563 5.656 0l40 40a3.997 3.997 0 0 1 0 5.656l-40 40A3.988 3.988 0 0 1 44 108z" fill="#7c818b" opacity="1" data-original="#000000"></path></g></svg>
+            </div>
+        </div>
+        <div class="side-img w-full text-center py-4 xl:w-96 h-auto bg-[#cedada] hidden md:block">
+            <div class="flex flex-row gap-14 items-center justify-between px-20 py-12 h-full xl:justify-start xl:flex-col xl:px-0">
+                <div class="px-12">
+                    <img class="w-44" src="https://i0.wp.com/motta.uix.store/wp-content/uploads/2022/08/home9-cb01.png?w=640&ssl=1" alt="">
+                </div>
+                <div>
+                    <img class="w-32 m-auto" src="https://i0.wp.com/motta.uix.store/wp-content/uploads/2022/08/home9-cb02.png?w=640&ssl=1" alt="">
+                </div>
+            </div>
+            <div class="-mt-10">
+                <p class="text-xs font-medium text-[#0e3f3b] underline">See Terms & Conditions.</p>
+            </div>
+        </div>
+    </div>
+
     <!-- script -->
     <script src="javascript/script.js"></script>
     <script src="javascript/nav.js"></script>
