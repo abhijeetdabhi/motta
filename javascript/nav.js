@@ -46,33 +46,3 @@ document.onclick = function(e){
         SideBar.style.transform = 'translateX(-100%)';
     }
 }
-
-
-
-
-// shopping cart
-let shoppingCart = document.getElementById('shoppingCart');
-let cart = document.querySelector('.cart');
-let CartClose = document.getElementById('CartClose');
-
-
-cart.addEventListener('click',()=>{
-    shoppingCart.style.transform = 'translateX(0%)';
-    Navbar.style.filter = 'brightness(50%)';
-    document.body.style.overflow = 'hidden';
-    SearchInput.disabled = true;
-})
-
-CartClose.addEventListener('click',()=>{
-    shoppingCart.style.transform = 'translateX(100%)';
-    Navbar.style.filter = 'brightness(100%)';
-    document.body.style.overflow = 'scroll';
-})
-
-document.onclick = function(e){
-    if(!shoppingCart.contains(e.target) && !cart.contains(e.target) && !CartClose.contains(e.target)){
-        shoppingCart.style.transform = 'translateX(100%)';
-        Navbar.style.filter = 'brightness(100%)';
-        document.body.style.overflow = 'scroll';
-    }
-}
