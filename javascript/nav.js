@@ -46,3 +46,4 @@ document.onclick = function(e){
         SideBar.style.transform = 'translateX(-100%)';
     }
 }
+
