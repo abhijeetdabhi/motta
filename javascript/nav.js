@@ -44,6 +44,8 @@ closeBtn.addEventListener('click',()=>{
 document.onclick = function(e){
     if(!menuBar.contains(e.target) && !SideBar.contains(e.target) && !closeBtn.contains(e.target)){
         SideBar.style.transform = 'translateX(-100%)';
+        Navbar.style.filter = 'brightness(100%)';
+        document.body.style.overflow = 'scroll';
     }
 }
 
