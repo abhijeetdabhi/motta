@@ -44,10 +44,10 @@
                 <div class="favorite">
                     <svg class="fill-[#fff]" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M22.736 6.4v0c1.792 0 3.44 1.12 4.128 2.768 0.8 1.92 0.112 4.144-1.856 6.112l-9.024 8.992-9.024-8.976c-1.984-1.984-2.64-4.144-1.824-6.080 0.688-1.68 2.352-2.8 4.144-2.8 1.504 0 3.040 0.752 4.448 2.16l2.256 2.256 2.256-2.256c1.44-1.424 2.992-2.176 4.496-2.176zM22.736 3.2c-2.176 0-4.544 0.912-6.752 3.104-2.192-2.176-4.544-3.088-6.704-3.088-6.368 0-11.040 7.904-4.576 14.336l11.28 11.248 11.28-11.248c6.496-6.448 1.856-14.352-4.528-14.352v0z"></path></svg>
                 </div>
-                <div class="account items-center gap-2 hidden md:flex">
+                <a href="../signin.html" class="account items-center gap-2 hidden md:flex">
                     <svg class="fill-[#fff]" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M16 16c-4.064 0-6.4-2.336-6.4-6.4 0-3.536 2.864-6.4 6.4-6.4s6.4 2.864 6.4 6.4c0 4-2.4 6.4-6.4 6.4zM16 6.4c-1.76 0-3.2 1.44-3.2 3.2 0 2.272 0.928 3.2 3.2 3.2 2.24 0 3.2-0.96 3.2-3.2 0-1.76-1.44-3.2-3.2-3.2z"></path><path d="M27.2 28.8h-22.4v-3.2c0-4.416 3.584-8 8-8h6.4c4.416 0 8 3.584 8 8v3.2zM8 25.6h16c0-2.64-2.16-4.8-4.8-4.8h-6.4c-2.64 0-4.8 2.16-4.8 4.8z"></path></svg>
                     <p class="text-base font-medium text-white hidden xl:block">Account</p>
-                </div>
+                </a>
                 <a href="../cart.html" class="cart flex items-center gap-2">
                     <svg class="cursor-pointer relative" style="fill: white;" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M25.248 22.4l3.552-14.4h-18.528l-0.96-4.8h-6.112v3.2h3.488l3.2 16h15.36zM24.704 11.2l-1.968 8h-10.24l-1.6-8h13.808z"></path><path d="M25.6 26.4c0 1.325-1.075 2.4-2.4 2.4s-2.4-1.075-2.4-2.4c0-1.325 1.075-2.4 2.4-2.4s2.4 1.075 2.4 2.4z"></path><path d="M14.4 26.4c0 1.325-1.075 2.4-2.4 2.4s-2.4-1.075-2.4-2.4c0-1.325 1.075-2.4 2.4-2.4s2.4 1.075 2.4 2.4z"></path></svg>
                     <p class="text-base font-medium text-white hidden xl:block">Cart</p>
@@ -222,6 +222,25 @@
         </div>
     </div>
 
+    <!-- Laptops header -->
+    <header class="px-8 py-6 xl:px-52">
+        <div class="flex items-center gap-1">
+            <a href="../../index.html" class="text-xs font-medium text-[#7c818b]">Home</a>
+            <svg class="w-2 text-[#7c818b]" width="24" height="24" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M11.42 29.42l-2.84-2.84 10.6-10.58-10.6-10.58 2.84-2.84 13.4 13.42z"></path></svg>
+            <a href="#" class="text-xs font-medium text-[#1d2128]">Laptops</a>
+        </div>
+        <div class="bg-[url('https://motta.uix.store/electronic/wp-content/uploads/sites/6/2022/09/shop_header.jpg')] bg-cover bg-center bg-no-repeat flex items-center h-28 md:h-52 mt-4">
+            <h1 class="text-[#b96459] text-xl font-bold px-5 md:px-10 md:text-4xl">Laptops</h1>
+        </div>
+    </header>
+    
+    <!-- products -->
+    <div class="listProduct grid grid-cols-2 gap-5 px-3 py-12 md:grid-cols-4 xl:px-52">
+        <!-- add product using javascript -->
+    </div>
+    
+    <hr>
+
     <!-- features -->
     <div class="features px-12 xl:px-48">
         <div class="flex flex-col items-center justify-center">
@@ -331,6 +350,165 @@
 
 
     <script src="../../javascript/nav.js"></script>
+
+    <script>
+        let laptops = [
+            {
+                "id": 0,
+                "location": "../categories/Laptops/hp14.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61jwMRv3Y-L._SL1500_.jpg",
+                "name": "HP Laptop 14, AMD Ryzen 5 7520U, 14-inch (35.6 cm), FHD, 16GB LPDDR5, 512GB SSD, AMD Radeon Graphics, FHD Camera w/Privacy Shutter, Backlit KB (Win 11, MSO 2021, Silver, 1.4 kg), hr0000AU",
+                "review": "10",
+                "Fprice": "52,990",
+                "Sprice": "59,390"
+            },
+            {
+                "id": 1,
+                "location": "../categories/Laptops/asus14.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71hu2MKb3xL._SL1500_.jpg",
+                "name": "ASUS Vivobook 14, IntelCore i3-1215U 12th Gen, 14'(35.56 cm) FHD, Thin and Light Laptop (8 GB RAM/512GB SSD/Win11/Office 2021/Fingerprint/42WHr /Silver/1.40 kg), X1404ZA-NK322WS",
+                "review": "504",
+                "Fprice": "37,990",
+                "Sprice": "56,990"
+            },
+            {
+                "id": 2,
+                "location": "../categories/Laptops/lenovo3.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/51eww8hFXHL._SL1080_.jpg",
+                "name": "Lenovo IdeaPad Slim 3 Intel Core i3 12th Gen 15.6 inch (39.62cm) FHD Thin & Light Laptop (8GB/256GB SSD/Windows 11/3months Game Pass/Arctic Grey/1.63Kg), 82RK011DIN with 12Month No-Cost EMI",
+                "review": "745",
+                "Fprice": "32,990",
+                "Sprice": "47,590"
+            },
+            {
+                "id": 3,
+                "location": "../categories/Laptops/asus16X.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71HD+TwPD8L._SL1500_.jpg",
+                "name": "ASUS Vivobook 16X (2022), AMD Ryzen 7 5800Hs, 16' (40.64 Cms) Fhd+, Thin and Laptop (HDMI/16Gb/512Gb Ssd/Windows 11/Office 2021/Alexa Built-in/Backlit Kb/Fp Sensor/Silver/1.88 Kg), M1603Qa-Mb712Ws",
+                "review": "41",
+                "Fprice": "57,990",
+                "Sprice": "67,990"
+            },
+            {
+                "id": 4,
+                "location": "../categories/Laptops/hp-omen.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71PlJMFYA4L._SL1500_.jpg",
+                "name": "HP OMEN Gaming Laptop,AMD Ryzen 7 6800H,8GB RTX 3070 Ti GPU,16.1-inch (40.9 cm),QHD,IPS,300 nits,165Hz,Windows 11 Home,3 ms Response time,16GB DDR5,1TB SSD,RGB Backlit KB(MSO,Silver,2.37 kg),n0123AX",
+                "review": "142",
+                "Fprice": "1,19,990",
+                "Sprice": "1,50,990"
+            },
+            {
+                "id": 5,
+                "location": "../categories/Laptops/macbook-m1.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71TPda7cwUL._SL1500_.jpg",
+                "name": "Apple MacBook Air Laptop M1 chip, 13.3-inch/33.74 cm Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, FaceTime HD Camera, Touch ID. Works with iPhone/iPad; Silver",
+                "review": "3,232",
+                "Fprice": "89,990",
+                "Sprice": "92,990"
+            },
+            {
+                "id": 6,
+                "location": "../categories/Laptops/macbook-m2.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71f5Eu5lJSL._SL1500_.jpg",
+                "name": "Apple 2022 MacBook Air Laptop with M2 chip: 34.46 cm (13.6-inch) Liquid Retina Display, 8GB RAM, 512GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera. Works with iPhone/iPad; Space Grey",
+                "review": "12",
+                "Fprice": "1,44,900",
+                "Sprice": "1,49,900"
+            },
+            {
+                "id": 7,
+                "location": "../categories/Laptops/microsoft4.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61Qe0euJJZL._SL1500_.jpg",
+                "name": "Microsoft Laptop 4 - 15' inches Screen, AMD R7/Windows 10 Home/8GB RAM/256 GB SSD/ Platinum - (5UI-00049)",
+                "review": "23",
+                "Fprice": "1,45,999",
+                "Sprice": "1,46,900"
+            },
+            {
+                "id": 8,
+                "location": "../categories/Laptops/dell.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/61JQvK1EbwL._SL1080_.jpg",
+                "name": "Dell [SmartChoice G15-5520 Gaming Laptop, Intel i5-12500H/8GB DDR5/512GB SSD/NVIDIA RTX 3050 (4GB GDDR6)/15.6' (39.62cm) FHD 120Hz Display/Backlit KB Orange/Win 11 + MSO'21/Dark Shadow Grey/2.81kg",
+                "review": "442",
+                "Fprice": "69,490",
+                "Sprice": "86,790"
+            },
+            {
+                "id": 9,
+                "location": "../categories/Laptops/asus-rog.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71T4m4vigmL._SL1500_.jpg",
+                "name": "ASUS ROG Strix G16 (2023) 64WHrs Battery, Intel Core i5-13450HX 13th Gen, 16' FHD+ 165Hz, 6GB RTX 3050, Gaming Laptop (16GB/512GB SSD/Windows 11/Office 2021/4-Zone RGB KB/Gray/2.50 Kg) G614JJ-N3086WS",
+                "review": "32",
+                "Fprice": "94,990",
+                "Sprice": "1,19,990"
+            },
+            {
+                "id": 10,
+                "location": "../categories/Laptops/acer15.html",
+                "image": "https://m.media-amazon.com/images/W/MEDIAX_792452-T1/images/I/71IfO70KcRL._SL1500_.jpg",
+                "name": "Acer Extensa 15 Intel Core i3 N305 8 core Processor (8 GB/512 GB SSD/Win11 Home/MS Office Home and Student/Intel UHD Graphics/1.7 KG/Silver) EX215-33 FHD Display Laptop",
+                "review": "311",
+                "Fprice": "31,990",
+                "Sprice": "46,999"
+            },
+        ]
+
+        let listProductToHtml = document.querySelector('.listProduct');
+
+        const initApp = () =>{
+            laptops.forEach(value=>{
+                let newProduct = document.createElement('div');
+                newProduct.classList.add('item');
+                newProduct.innerHTML = `<a href="${value.location}">
+                <div class="group px-2 border rounded-md py-5 md:p-5 relative hover:shadow-2xl transition duration-300">
+                    <div class="absolute hidden right-0 top-0 z-10 items-center gap-4 pt-3 p-2 md:p-5 group-hover:flex">
+                        <div class="favorite">
+                            <svg class="fill-[#7c818b] cursor-pointer hover:fill-[#1d2128] transition duration-300" width="20" height="20" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M22.736 6.4v0c1.792 0 3.44 1.12 4.128 2.768 0.8 1.92 0.112 4.144-1.856 6.112l-9.024 8.992-9.024-8.976c-1.984-1.984-2.64-4.144-1.824-6.080 0.688-1.68 2.352-2.8 4.144-2.8 1.504 0 3.040 0.752 4.448 2.16l2.256 2.256 2.256-2.256c1.44-1.424 2.992-2.176 4.496-2.176zM22.736 3.2c-2.176 0-4.544 0.912-6.752 3.104-2.192-2.176-4.544-3.088-6.704-3.088-6.368 0-11.040 7.904-4.576 14.336l11.28 11.248 11.28-11.248c6.496-6.448 1.856-14.352-4.528-14.352v0z"></path></svg>
+                        </div>
+                        <div class="compare">
+                            <svg class="fill-[#7c818b] cursor-pointer hover:fill-[#1d2128] transition duration-300" width="20" height="20" aria-hidden="true" role="img" focusable="false" viewBox="0 0 32 32"><path d="M13.136 14.864l-3.68-3.664h16.144v-3.2h-16.144l3.68-3.664-2.272-2.272-7.52 7.536 7.52 7.536z"></path><path d="M21.136 14.864l-2.272 2.272 3.68 3.664h-16.144v3.2h16.144l-3.68 3.664 2.272 2.272 7.52-7.536z"></path></svg>
+                        </div>
+                    </div>
+                    <!-- images -->
+                    <div class="cursor-pointer relative mt-6">
+                        <a href="${value.location}" class="relative m-auto">
+                            <img src="${value.image}" alt="">
+                        </a>
+                    </div>
+                    <!-- product-details -->
+                    <div class="flex flex-col gap-2 mt-12">
+                        <!-- name -->
+                        <a href="" class="text-sm font-normal line-clamp-2 cursor-vertical-text">${value.name}</a>
+                        <!-- rating -->
+                        <div class="flex items-center gap-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ffc107" d="m23.363 8.584-7.378-1.127L12.678.413c-.247-.526-1.11-.526-1.357 0L8.015 7.457.637 8.584a.75.75 0 0 0-.423 1.265l5.36 5.494-1.267 7.767a.75.75 0 0 0 1.103.777L12 20.245l6.59 3.643a.75.75 0 0 0 1.103-.777l-1.267-7.767 5.36-5.494a.75.75 0 0 0-.423-1.266z" opacity="1" data-original="#ffc107" class=""></path></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ffc107" d="m23.363 8.584-7.378-1.127L12.678.413c-.247-.526-1.11-.526-1.357 0L8.015 7.457.637 8.584a.75.75 0 0 0-.423 1.265l5.36 5.494-1.267 7.767a.75.75 0 0 0 1.103.777L12 20.245l6.59 3.643a.75.75 0 0 0 1.103-.777l-1.267-7.767 5.36-5.494a.75.75 0 0 0-.423-1.266z" opacity="1" data-original="#ffc107" class=""></path></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ffc107" d="m23.363 8.584-7.378-1.127L12.678.413c-.247-.526-1.11-.526-1.357 0L8.015 7.457.637 8.584a.75.75 0 0 0-.423 1.265l5.36 5.494-1.267 7.767a.75.75 0 0 0 1.103.777L12 20.245l6.59 3.643a.75.75 0 0 0 1.103-.777l-1.267-7.767 5.36-5.494a.75.75 0 0 0-.423-1.266z" opacity="1" data-original="#ffc107" class=""></path></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ffc107" d="m23.363 8.584-7.378-1.127L12.678.413c-.247-.526-1.11-.526-1.357 0L8.015 7.457.637 8.584a.75.75 0 0 0-.423 1.265l5.36 5.494-1.267 7.767a.75.75 0 0 0 1.103.777L12 20.245l6.59 3.643a.75.75 0 0 0 1.103-.777l-1.267-7.767 5.36-5.494a.75.75 0 0 0-.423-1.266z" opacity="1" data-original="#ffc107" class=""></path></g></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path fill="#ffc107" d="m23.363 8.584-7.378-1.127L12.678.413c-.247-.526-1.11-.526-1.357 0L8.015 7.457.637 8.584a.75.75 0 0 0-.423 1.265l5.36 5.494-1.267 7.767a.75.75 0 0 0 1.103.777L12 20.245l6.59 3.643a.75.75 0 0 0 1.103-.777l-1.267-7.767 5.36-5.494a.75.75 0 0 0-.423-1.266z" opacity="1" data-original="#ffc107" class=""></path></g></svg>
+                            <span class="text-xs font-medium text-[#7c818b]">(${value.review})</span>
+                        </div>
+                        <!-- price -->
+                        <div class="flex items-baseline gap-1">
+                            <span class="text-lg font-medium">₹${value.Fprice}</span>
+                            <del class="text-[10px] font-normal">₹${value.Sprice}</del>
+                        </div>
+                        <p class="text-sm font-normal">Save extra with No Cost EMI</p>
+                        <p class="text-sm font-normal">Free Delivery</p>
+                        <div class="mt-3">
+                            <button class="text-sm font-medium text-black border border-[#1d2128] px-6 py-2 rounded-md transition duration-300 hover:bg-[#1d2128] hover:text-white">Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </a>`;
+
+            listProductToHtml.appendChild(newProduct);
+            })
+        }
+
+        initApp();
+    </script>
 
 </body>
 </html>
