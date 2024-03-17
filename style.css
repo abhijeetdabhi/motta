@@ -1,0 +1,172 @@
+* {
+    font-family: 'Outfit', sans-serif;
+}
+
+.sidebar::-webkit-scrollbar,
+.Shoppingcarts::-webkit-scrollbar {
+    width: 3px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.Shoppingcarts::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.Shoppingcarts::-webkit-scrollbar-thumb {
+    background: #c8c8c8;
+    border-radius: 10px;
+}
+
+header::-webkit-scrollbar,
+.best-product::-webkit-scrollbar,
+.trending::-webkit-scrollbar,
+.explore::-webkit-scrollbar,
+.brand::-webkit-scrollbar,
+.brand1::-webkit-scrollbar{
+    display: none;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.slider-container {
+    position: relative;
+    height: 500px;
+    width: 100%;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+}
+
+.slide img {
+    height: inherit;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.navBtn {
+    width: 28px;
+    height: 56px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 0 2px 6px 0 rgba(29, 33, 40, .16);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.navBtn.left {
+    left: 1rem;
+}
+
+.navBtn.right {
+    right: 1rem;
+}
+
+@media (min-width:768px) {
+    .slider-container {
+        height: 450px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .slider-container {
+        height: 450px;
+    }
+}
+
+
+.wrapper .carousel,
+.wrapper2 .carousel2,
+.wrapper3 .carousel3 {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 6) - 12px);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar,
+.carousel2::-webkit-scrollbar,
+.carousel3::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel.no-transition,
+.carousel2.no-transition2,
+.carousel3.no-transition3 {
+    scroll-behavior: auto;
+}
+
+.carousel.dragging,
+.carousel2.dragging2,
+.carousel3.dragging3 {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel.dragging .card,
+.carousel2.dragging2 .card2,
+.carousel3.dragging3 .card3{
+    cursor: grab;
+    user-select: none;
+}
+
+.carousel :where(.card, .img),
+.carousel2 :where(.card2, .img2),
+.carousel3 :where(.card3, .img3) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel .card,
+.carousel2 .card2, 
+.carousel3 .card3{
+    scroll-snap-align: start;
+    list-style: none;
+    background: #fff;
+    cursor: pointer;
+    padding-bottom: 15px;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 900px) {
+    .wrapper .carousel,
+    .wrapper2 .carousel2,
+    .wrapper3 .carousel3 {
+        grid-auto-columns: calc((100% / 3) - 9px);
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper .carousel,
+    .wrapper2 .carousel2,
+    .wrapper3 .carousel3 {
+        grid-auto-columns: calc((100% / 2) - 9px);
+    }
+}
