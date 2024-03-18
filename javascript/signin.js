@@ -73,14 +73,18 @@ function signInDetail(){
 // show user name in sidebar
 
 let storedUserData = localStorage.getItem('usersData');
-
 let usersData = JSON.parse(storedUserData) || [];
 
-if (usersData.length > 0) {
+let storedUserMail = localStorage.getItem('UserMail');
+let userMail = JSON.parse(storedUserMail) || [];
+
+
+if (usersData.length > 0 && userMail.length > 0) {
     let usersName = document.getElementById('usersName');
     let firstUserLastName = usersData[0].LastName;
     usersName.innerHTML = firstUserLastName;
-} else {
+}
+else {
     usersName.innerHTML = 'Sign in';
 }
 
@@ -248,25 +252,33 @@ function showUser(){
         signinContainer.style.display = "flex";
     }
 
+    
     let storedUserData = localStorage.getItem('usersData');
-
+    
     let usersData = JSON.parse(storedUserData) || [];
     
-    let UserName = document.querySelector('.UserName');
-    let UserNumber = document.querySelector('.UserNumber');
-    let userEmail = document.querySelector('.userEmail')
-    let SecondMail = document.querySelector('.SecondMail')
-
-    let UserFirstName = usersData[0].FirstName;
-    let UserLastName = usersData[0].LastName;
-    let UserPhone = usersData[0].PhoneNumber;
-    let UserMailId = usersData[0].EmailAddress;
-
-    UserName.innerHTML = UserFirstName + " " + UserLastName; 
-    UserNumber.innerHTML = UserPhone;
-    userEmail.innerHTML = UserMailId;
-    SecondMail.innerHTML = UserMailId;
-
+    if (storedUserMail.length > 0) {
+        
+        let UserName = document.querySelector('.UserName');
+        let UserNumber = document.querySelector('.UserNumber');
+        let userEmail = document.querySelector('.userEmail')
+        let SecondMail = document.querySelector('.SecondMail')
+        
+        let UserFirstName = usersData[0].FirstName;
+        let UserLastName = usersData[0].LastName;
+        let UserPhone = usersData[0].PhoneNumber;
+        let UserMailId = usersData[0].EmailAddress;
+        
+        UserName.innerHTML = UserFirstName + " " + UserLastName; 
+        UserNumber.innerHTML = UserPhone;
+        userEmail.innerHTML = UserMailId;
+        SecondMail.innerHTML = UserMailId;
+    }
+    else{
+        account.style.display = 'none';
+        signinContainer.style.display = "flex";
+    }
+    
     emailPass();
 }
 
